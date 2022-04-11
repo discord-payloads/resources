@@ -21,7 +21,7 @@
         "name": "Edit Global Application Command",
         "method": "PATCH",
         "url": "/applications/{application.id}/commands/{command.id}",
-        "description": "Edit a global command. Updates will be available in all guilds after 1 hour. Returns 200 and an application command object."
+        "description": "Edit a global command. Updates will be available in all guilds after 1 hour. Returns 200 and an application command object. All fields are optional, but any fields provided will entirely overwrite the existing values of those fields."
     },
     {
         "name": "Delete Global Application Command",
@@ -57,7 +57,7 @@
         "name": "Edit Guild Application Command",
         "method": "PATCH",
         "url": "/applications/{application.id}/guilds/{guild.id}/commands/{command.id}",
-        "description": "Edit a guild command. Updates for guild commands will be available immediately. Returns 200 and an application command object."
+        "description": "Edit a guild command. Updates for guild commands will be available immediately. Returns 200 and an application command object. All fields are optional, but any fields provided will entirely overwrite the existing values of those fields."
     },
     {
         "name": "Delete Guild Application Command",

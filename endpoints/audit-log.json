@@ -3,6 +3,6 @@
         "name": "Get Guild Audit Log",
         "method": "GET",
         "url": "/guilds/{guild.id}/audit-logs",
-        "description": "Returns an audit log object for the guild. Requires the 'VIEW_AUDIT_LOG' permission."
+        "description": "Returns an audit log object for the guild. Requires the VIEW_AUDIT_LOG permission."
     }
 ]

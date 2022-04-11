@@ -21,13 +21,13 @@
         "name": "Get Channel Messages",
         "method": "GET",
         "url": "/channels/{channel.id}/messages",
-        "description": "Returns the messages for a channel. If operating on a guild channel, this endpoint requires the VIEW_CHANNEL permission to be present on the current user. If the current user is missing the 'READ_MESSAGE_HISTORY' permission in the channel then this will return no messages (since they cannot read the message history). Returns an array of message objects on success."
+        "description": "Returns the messages for a channel. If operating on a guild channel, this endpoint requires the VIEW_CHANNEL permission to be present on the current user. If the current user is missing the READ_MESSAGE_HISTORY permission in the channel then this will return no messages (since they cannot read the message history). Returns an array of message objects on success."
     },
     {
         "name": "Get Channel Message",
         "method": "GET",
         "url": "/channels/{channel.id}/messages/{message.id}",
-        "description": "Returns a specific message in the channel. If operating on a guild channel, this endpoint requires the 'READ_MESSAGE_HISTORY' permission to be present on the current user. Returns a message object on success."
+        "description": "Returns a specific message in the channel. If operating on a guild channel, this endpoint requires the READ_MESSAGE_HISTORY permission to be present on the current user. Returns a message object on success."
     },
     {
         "name": "Create Message",
@@ -39,13 +39,13 @@
         "name": "Crosspost Message",
         "method": "POST",
         "url": "/channels/{channel.id}/messages/{message.id}/crosspost",
-        "description": "Crosspost a message in a News Channel to following channels. This endpoint requires the 'SEND_MESSAGES' permission, if the current user sent the message, or additionally the 'MANAGE_MESSAGES' permission, for all other messages, to be present for the current user."
+        "description": "Crosspost a message in a News Channel to following channels. This endpoint requires the SEND_MESSAGES permission, if the current user sent the message, or additionally the MANAGE_MESSAGES permission, for all other messages, to be present for the current user."
     },
     {
         "name": "Create Reaction",
         "method": "PUT",
         "url": "/channels/{channel.id}/messages/{message.id}/reactions/{emoji}/@me",
-        "description": "Create a reaction for the message. This endpoint requires the 'READ_MESSAGE_HISTORY' permission to be present on the current user. Additionally, if nobody else has reacted to the message using this emoji, this endpoint requires the 'ADD_REACTIONS' permission to be present on the current user. Returns a 204 empty response on success.\nThe emoji must be URL Encoded or the request will fail with 10014: Unknown Emoji. To use custom emoji, you must encode it in the format name:id with the emoji name and emoji id."
+        "description": "Create a reaction for the message. This endpoint requires the READ_MESSAGE_HISTORY permission to be present on the current user. Additionally, if nobody else has reacted to the message using this emoji, this endpoint requires the ADD_REACTIONS permission to be present on the current user. Returns a 204 empty response on success.\nThe emoji must be URL Encoded or the request will fail with 10014: Unknown Emoji. To use custom emoji, you must encode it in the format name:id with the emoji name and emoji id."
     },
     {
         "name": "Delete Own Reaction",
@@ -57,7 +57,7 @@
         "name": "Delete User Reaction",
         "method": "DELETE",
         "url": "/channels/{channel.id}/messages/{message.id}/reactions/{emoji}/{user.id}",
-        "description": "Deletes another user's reaction. This endpoint requires the 'MANAGE_MESSAGES' permission to be present on the current user. Returns a 204 empty response on success.\nThe emoji must be URL Encoded or the request will fail with 10014: Unknown Emoji. To use custom emoji, you must encode it in the format name:id with the emoji name and emoji id."
+        "description": "Deletes another user's reaction. This endpoint requires the MANAGE_MESSAGES permission to be present on the current user. Returns a 204 empty response on success.\nThe emoji must be URL Encoded or the request will fail with 10014: Unknown Emoji. To use custom emoji, you must encode it in the format name:id with the emoji name and emoji id."
     },
     {
         "name": "Get Reactions",
@@ -69,7 +69,7 @@
         "name": "Delete All Reactions",
         "method": "DELETE",
         "url": "/channels/{channel.id}/messages/{message.id}/reactions",
-        "description": "Deletes all reactions on a message. This endpoint requires the 'MANAGE_MESSAGES' permission to be present on the current user. Fires a Message Reaction Remove All Gateway event."
+        "description": "Deletes all reactions on a message. This endpoint requires the MANAGE_MESSAGES permission to be present on the current user. Fires a Message Reaction Remove All Gateway event."
     },
     {
         "name": "Delete All Reactions for Emoji",
@@ -99,7 +99,7 @@
         "name": "Edit Channel Permissions",
         "method": "PUT",
         "url": "/channels/{channel.id}/permissions/{overwrite.id}",
-        "description": "Edit the channel permission overwrites for a user or role in a channel. Only usable for guild channels. Requires the MANAGE_ROLES permission. Only permissions your bot has in the guild or channel can be allowed/denied (unless your bot has a MANAGE_ROLES overwrite in the channel). Returns a 204 empty response on success. For more information about permissions, see permissions."
+        "description": "Edit the channel permission overwrites for a user or role in a channel. Only usable for guild channels. Requires the MANAGE_ROLES permission. Only permissions your bot has in the guild or parent channel (if applicable) can be allowed/denied (unless your bot has a MANAGE_ROLES overwrite in the channel). Returns a 204 empty response on success. For more information about permissions, see permissions."
     },
     {
         "name": "Get Channel Invites",
@@ -162,7 +162,7 @@
         "description": "Removes a recipient from a Group DM."
     },
     {
-        "name": "Start Thread with Message",
+        "name": "Start Thread from Message",
         "method": "POST",
         "url": "/channels/{channel.id}/messages/{message.id}/threads",
         "description": "Creates a new thread from an existing message. Returns a channel on success, and a 400 BAD REQUEST on invalid parameters. Fires a Thread Create Gateway event."
@@ -171,7 +171,13 @@
         "name": "Start Thread without Message",
         "method": "POST",
         "url": "/channels/{channel.id}/threads",
-        "description": "Creates a new thread that is not connected to an existing message. The created thread defaults to a GUILD_PRIVATE_THREAD*. Returns a channel on success, and a 400 BAD REQUEST on invalid parameters. Fires a Thread Create Gateway event."
+        "description": "Creates a new thread that is not connected to an existing message. Returns a channel on success, and a 400 BAD REQUEST on invalid parameters. Fires a Thread Create Gateway event."
+    },
+    {
+        "name": "Start Thread in Forum Channel",
+        "method": "POST",
+        "url": "/channels/{channel.id}/threads",
+        "description": "Creates a new thread in a forum channel, and sends a message within the created thread. Returns a channel on success, and a 400 BAD REQUEST on invalid parameters. Fires a Thread Create and Message Create Gateway event."
     },
     {
         "name": "Join Thread",

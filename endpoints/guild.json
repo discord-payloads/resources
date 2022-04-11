@@ -171,13 +171,13 @@
         "name": "Get Guild Prune Count",
         "method": "GET",
         "url": "/guilds/{guild.id}/prune",
-        "description": "Returns an object with one 'pruned' key indicating the number of members that would be removed in a prune operation. Requires the KICK_MEMBERS permission."
+        "description": "Returns an object with one pruned key indicating the number of members that would be removed in a prune operation. Requires the KICK_MEMBERS permission."
     },
     {
         "name": "Begin Guild Prune",
         "method": "POST",
         "url": "/guilds/{guild.id}/prune",
-        "description": "Begin a prune operation. Requires the KICK_MEMBERS permission. Returns an object with one 'pruned' key indicating the number of members that were removed in the prune operation. For large guilds it's recommended to set the compute_prune_count option to false, forcing 'pruned' to null. Fires multiple Guild Member Remove Gateway events."
+        "description": "Begin a prune operation. Requires the KICK_MEMBERS permission. Returns an object with one pruned key indicating the number of members that were removed in the prune operation. For large guilds it's recommended to set the compute_prune_count option to false, forcing pruned to null. Fires multiple Guild Member Remove Gateway events."
     },
     {
         "name": "Get Guild Voice Regions",
@@ -207,13 +207,13 @@
         "name": "Get Guild Widget Settings",
         "method": "GET",
         "url": "/guilds/{guild.id}/widget",
-        "description": "Returns a guild widget object. Requires the MANAGE_GUILD permission."
+        "description": "Returns a guild widget settings object. Requires the MANAGE_GUILD permission."
     },
     {
         "name": "Modify Guild Widget",
         "method": "PATCH",
         "url": "/guilds/{guild.id}/widget",
-        "description": "Modify a guild widget object for the guild. All attributes may be passed in with JSON and modified. Requires the MANAGE_GUILD permission. Returns the updated guild widget object."
+        "description": "Modify a guild widget settings object for the guild. All attributes may be passed in with JSON and modified. Requires the MANAGE_GUILD permission. Returns the updated guild widget object."
     },
     {
         "name": "Get Guild Widget",
@@ -237,7 +237,7 @@
         "name": "Get Guild Welcome Screen",
         "method": "GET",
         "url": "/guilds/{guild.id}/welcome-screen",
-        "description": "Returns the Welcome Screen object for the guild."
+        "description": "Returns the Welcome Screen object for the guild. If the welcome screen is not enabled, the MANAGE_GUILD permission is required."
     },
     {
         "name": "Modify Guild Welcome Screen",
@@ -249,7 +249,7 @@
         "name": "Modify Current User Voice State",
         "method": "PATCH",
         "url": "/guilds/{guild.id}/voice-states/@me",
-        "description": "Updates the current user's voice state."
+        "description": "Updates the current user's voice state. Returns 204 No Content on success."
     },
     {
         "name": "Modify User Voice State",

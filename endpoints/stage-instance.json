@@ -3,7 +3,7 @@
         "name": "Create Stage Instance",
         "method": "POST",
         "url": "/stage-instances",
-        "description": "Creates a new Stage instance associated to a Stage channel."
+        "description": "Creates a new Stage instance associated to a Stage channel. Returns that Stage instance."
     },
     {
         "name": "Get Stage Instance",
@@ -15,12 +15,12 @@
         "name": "Modify Stage Instance",
         "method": "PATCH",
         "url": "/stage-instances/{channel.id}",
-        "description": "Updates fields of an existing Stage instance."
+        "description": "Updates fields of an existing Stage instance. Returns the updated Stage instance."
     },
     {
         "name": "Delete Stage Instance",
         "method": "DELETE",
         "url": "/stage-instances/{channel.id}",
-        "description": "Deletes the Stage instance."
+        "description": "Deletes the Stage instance. Returns 204 No Content."
     }
 ]
