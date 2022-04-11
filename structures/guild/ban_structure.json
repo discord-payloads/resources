@@ -1,0 +1,16 @@
+[
+    {
+        "name": "reason",
+        "type": "string",
+        "description": "the reason for the ban",
+        "optional": false,
+        "nullable": true
+    },
+    {
+        "name": "user",
+        "type": "user object",
+        "description": "the banned user",
+        "optional": false,
+        "nullable": false
+    }
+]

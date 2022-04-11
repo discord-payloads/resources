@@ -1,0 +1,79 @@
+[
+    {
+        "name": "id",
+        "type": "snowflake",
+        "description": "unique id of the command",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "type",
+        "type": "one of application command type",
+        "description": "the type of command, defaults 1 if not set",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "application_id",
+        "type": "snowflake",
+        "description": "unique id of the parent application",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "guild_id",
+        "type": "snowflake",
+        "description": "guild id of the command, if not global",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "name",
+        "type": "string",
+        "description": "1-32 character name",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "name_localizations",
+        "type": "dictionary with keys in available locales",
+        "description": "Localization dictionary for the name field. Values follow the same restrictions as name",
+        "optional": true,
+        "nullable": true
+    },
+    {
+        "name": "description",
+        "type": "string",
+        "description": "1-100 character description for CHAT_INPUT commands, empty string for USER and MESSAGE commands",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "description_localizations",
+        "type": "dictionary with keys in available locales",
+        "description": "Localization dictionary for the description field. Values follow the same restrictions as description",
+        "optional": true,
+        "nullable": true
+    },
+    {
+        "name": "options",
+        "type": "array of application command option",
+        "description": "the parameters for the command, max 25",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "default_permission",
+        "type": "boolean",
+        "description": "whether the command is enabled by default when the app is added to a guild (default true)",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "version",
+        "type": "snowflake",
+        "description": "autoincrementing version identifier updated during substantial record changes",
+        "optional": false,
+        "nullable": false
+    }
+]

@@ -1,0 +1,51 @@
+[
+    {
+        "name": "id",
+        "type": "snowflake",
+        "description": "id of the sticker pack",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "stickers",
+        "type": "array of sticker objects",
+        "description": "the stickers in the pack",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "name",
+        "type": "string",
+        "description": "name of the sticker pack",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "sku_id",
+        "type": "snowflake",
+        "description": "id of the pack's SKU",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "cover_sticker_id",
+        "type": "snowflake",
+        "description": "id of a sticker in the pack which is shown as the pack's icon",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "description",
+        "type": "string",
+        "description": "description of the sticker pack",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "banner_asset_id",
+        "type": "snowflake",
+        "description": "id of the sticker pack's banner image",
+        "optional": true,
+        "nullable": false
+    }
+]

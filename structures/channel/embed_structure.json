@@ -1,0 +1,93 @@
+[
+    {
+        "name": "title",
+        "type": "string",
+        "description": "title of embed",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "type",
+        "type": "string",
+        "description": "type of embed (always \"rich\" for webhook embeds)",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "description",
+        "type": "string",
+        "description": "description of embed",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "url",
+        "type": "string",
+        "description": "url of embed",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "timestamp",
+        "type": "ISO8601 timestamp",
+        "description": "timestamp of embed content",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "color",
+        "type": "integer",
+        "description": "color code of the embed",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "footer",
+        "type": "embed footer object",
+        "description": "footer information",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "image",
+        "type": "embed image object",
+        "description": "image information",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "thumbnail",
+        "type": "embed thumbnail object",
+        "description": "thumbnail information",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "video",
+        "type": "embed video object",
+        "description": "video information",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "provider",
+        "type": "embed provider object",
+        "description": "provider information",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "author",
+        "type": "embed author object",
+        "description": "author information",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "fields",
+        "type": "array of embed field objects",
+        "description": "fields information",
+        "optional": true,
+        "nullable": false
+    }
+]

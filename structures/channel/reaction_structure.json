@@ -1,0 +1,23 @@
+[
+    {
+        "name": "count",
+        "type": "integer",
+        "description": "times this emoji has been used to react",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "me",
+        "type": "boolean",
+        "description": "whether the current user reacted using this emoji",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "emoji",
+        "type": "partial emoji object",
+        "description": "emoji information",
+        "optional": false,
+        "nullable": false
+    }
+]

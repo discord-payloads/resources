@@ -1,0 +1,44 @@
+[
+    {
+        "name": "Get Guild Template",
+        "method": "GET",
+        "url": "/guilds/templates/{template.code}",
+        "description": "Returns a guild template object for the given code."
+    },
+    {
+        "name": "Create Guild from Guild Template",
+        "method": "POST",
+        "url": "/guilds/templates/{template.code}",
+        "description": "Create a new guild based on a template. Returns a guild object on success. Fires a Guild Create Gateway event."
+    },
+    {
+        "name": "Get Guild Templates",
+        "method": "GET",
+        "url": "/guilds/{guild.id}/templates",
+        "description": "Returns an array of guild template objects. Requires the MANAGE_GUILD permission."
+    },
+    {
+        "name": "Create Guild Template",
+        "method": "POST",
+        "url": "/guilds/{guild.id}/templates",
+        "description": "Creates a template for the guild. Requires the MANAGE_GUILD permission. Returns the created guild template object on success."
+    },
+    {
+        "name": "Sync Guild Template",
+        "method": "PUT",
+        "url": "/guilds/{guild.id}/templates/{template.code}",
+        "description": "Syncs the template to the guild's current state. Requires the MANAGE_GUILD permission. Returns the guild template object on success."
+    },
+    {
+        "name": "Modify Guild Template",
+        "method": "PATCH",
+        "url": "/guilds/{guild.id}/templates/{template.code}",
+        "description": "Modifies the template's metadata. Requires the MANAGE_GUILD permission. Returns the guild template object on success."
+    },
+    {
+        "name": "Delete Guild Template",
+        "method": "DELETE",
+        "url": "/guilds/{guild.id}/templates/{template.code}",
+        "description": "Deletes the template. Requires the MANAGE_GUILD permission. Returns the deleted guild template object on success."
+    }
+]

@@ -1,0 +1,236 @@
+[
+    {
+        "name": "Get Channel",
+        "method": "GET",
+        "url": "/channels/{channel.id}",
+        "description": "Get a channel by ID. Returns a channel object.  If the channel is a thread, a thread member object is included in the returned result."
+    },
+    {
+        "name": "Modify Channel",
+        "method": "PATCH",
+        "url": "/channels/{channel.id}",
+        "description": "Update a channel's settings. Returns a channel on success, and a 400 BAD REQUEST on invalid parameters. All JSON parameters are optional."
+    },
+    {
+        "name": "Delete/Close Channel",
+        "method": "DELETE",
+        "url": "/channels/{channel.id}",
+        "description": "Delete a channel, or close a private message. Requires the MANAGE_CHANNELS permission for the guild, or MANAGE_THREADS if the channel is a thread. Deleting a category does not delete its child channels; they will have their parent_id removed and a Channel Update Gateway event will fire for each of them. Returns a channel object on success. Fires a Channel Delete Gateway event (or Thread Delete if the channel was a thread)."
+    },
+    {
+        "name": "Get Channel Messages",
+        "method": "GET",
+        "url": "/channels/{channel.id}/messages",
+        "description": "Returns the messages for a channel. If operating on a guild channel, this endpoint requires the VIEW_CHANNEL permission to be present on the current user. If the current user is missing the 'READ_MESSAGE_HISTORY' permission in the channel then this will return no messages (since they cannot read the message history). Returns an array of message objects on success."
+    },
+    {
+        "name": "Get Channel Message",
+        "method": "GET",
+        "url": "/channels/{channel.id}/messages/{message.id}",
+        "description": "Returns a specific message in the channel. If operating on a guild channel, this endpoint requires the 'READ_MESSAGE_HISTORY' permission to be present on the current user. Returns a message object on success."
+    },
+    {
+        "name": "Create Message",
+        "method": "POST",
+        "url": "/channels/{channel.id}/messages",
+        "description": "Post a message to a guild text or DM channel. Returns a message object. Fires a Message Create Gateway event. See message formatting for more information on how to properly format messages."
+    },
+    {
+        "name": "Crosspost Message",
+        "method": "POST",
+        "url": "/channels/{channel.id}/messages/{message.id}/crosspost",
+        "description": "Crosspost a message in a News Channel to following channels. This endpoint requires the 'SEND_MESSAGES' permission, if the current user sent the message, or additionally the 'MANAGE_MESSAGES' permission, for all other messages, to be present for the current user."
+    },
+    {
+        "name": "Create Reaction",
+        "method": "PUT",
+        "url": "/channels/{channel.id}/messages/{message.id}/reactions/{emoji}/@me",
+        "description": "Create a reaction for the message. This endpoint requires the 'READ_MESSAGE_HISTORY' permission to be present on the current user. Additionally, if nobody else has reacted to the message using this emoji, this endpoint requires the 'ADD_REACTIONS' permission to be present on the current user. Returns a 204 empty response on success.\nThe emoji must be URL Encoded or the request will fail with 10014: Unknown Emoji. To use custom emoji, you must encode it in the format name:id with the emoji name and emoji id."
+    },
+    {
+        "name": "Delete Own Reaction",
+        "method": "DELETE",
+        "url": "/channels/{channel.id}/messages/{message.id}/reactions/{emoji}/@me",
+        "description": "Delete a reaction the current user has made for the message. Returns a 204 empty response on success.\nThe emoji must be URL Encoded or the request will fail with 10014: Unknown Emoji. To use custom emoji, you must encode it in the format name:id with the emoji name and emoji id."
+    },
+    {
+        "name": "Delete User Reaction",
+        "method": "DELETE",
+        "url": "/channels/{channel.id}/messages/{message.id}/reactions/{emoji}/{user.id}",
+        "description": "Deletes another user's reaction. This endpoint requires the 'MANAGE_MESSAGES' permission to be present on the current user. Returns a 204 empty response on success.\nThe emoji must be URL Encoded or the request will fail with 10014: Unknown Emoji. To use custom emoji, you must encode it in the format name:id with the emoji name and emoji id."
+    },
+    {
+        "name": "Get Reactions",
+        "method": "GET",
+        "url": "/channels/{channel.id}/messages/{message.id}/reactions/{emoji}",
+        "description": "Get a list of users that reacted with this emoji. Returns an array of user objects on success.\nThe emoji must be URL Encoded or the request will fail with 10014: Unknown Emoji. To use custom emoji, you must encode it in the format name:id with the emoji name and emoji id."
+    },
+    {
+        "name": "Delete All Reactions",
+        "method": "DELETE",
+        "url": "/channels/{channel.id}/messages/{message.id}/reactions",
+        "description": "Deletes all reactions on a message. This endpoint requires the 'MANAGE_MESSAGES' permission to be present on the current user. Fires a Message Reaction Remove All Gateway event."
+    },
+    {
+        "name": "Delete All Reactions for Emoji",
+        "method": "DELETE",
+        "url": "/channels/{channel.id}/messages/{message.id}/reactions/{emoji}",
+        "description": "Deletes all the reactions for a given emoji on a message. This endpoint requires the MANAGE_MESSAGES permission to be present on the current user. Fires a Message Reaction Remove Emoji Gateway event.\nThe emoji must be URL Encoded or the request will fail with 10014: Unknown Emoji. To use custom emoji, you must encode it in the format name:id with the emoji name and emoji id."
+    },
+    {
+        "name": "Edit Message",
+        "method": "PATCH",
+        "url": "/channels/{channel.id}/messages/{message.id}",
+        "description": "Edit a previously sent message. The fields content, embeds, and flags can be edited by the original message author. Other users can only edit flags and only if they have the MANAGE_MESSAGES permission in the corresponding channel. When specifying flags, ensure to include all previously set flags/bits in addition to ones that you are modifying. Only flags documented in the table below may be modified by users (unsupported flag changes are currently ignored without error)."
+    },
+    {
+        "name": "Delete Message",
+        "method": "DELETE",
+        "url": "/channels/{channel.id}/messages/{message.id}",
+        "description": "Delete a message. If operating on a guild channel and trying to delete a message that was not sent by the current user, this endpoint requires the MANAGE_MESSAGES permission. Returns a 204 empty response on success. Fires a Message Delete Gateway event."
+    },
+    {
+        "name": "Bulk Delete Messages",
+        "method": "POST",
+        "url": "/channels/{channel.id}/messages/bulk-delete",
+        "description": "Delete multiple messages in a single request. This endpoint can only be used on guild channels and requires the MANAGE_MESSAGES permission. Returns a 204 empty response on success. Fires a Message Delete Bulk Gateway event."
+    },
+    {
+        "name": "Edit Channel Permissions",
+        "method": "PUT",
+        "url": "/channels/{channel.id}/permissions/{overwrite.id}",
+        "description": "Edit the channel permission overwrites for a user or role in a channel. Only usable for guild channels. Requires the MANAGE_ROLES permission. Only permissions your bot has in the guild or channel can be allowed/denied (unless your bot has a MANAGE_ROLES overwrite in the channel). Returns a 204 empty response on success. For more information about permissions, see permissions."
+    },
+    {
+        "name": "Get Channel Invites",
+        "method": "GET",
+        "url": "/channels/{channel.id}/invites",
+        "description": "Returns a list of invite objects (with invite metadata) for the channel. Only usable for guild channels. Requires the MANAGE_CHANNELS permission."
+    },
+    {
+        "name": "Create Channel Invite",
+        "method": "POST",
+        "url": "/channels/{channel.id}/invites",
+        "description": "Create a new invite object for the channel. Only usable for guild channels. Requires the CREATE_INSTANT_INVITE permission. All JSON parameters for this route are optional, however the request body is not. If you are not sending any fields, you still have to send an empty JSON object ({}). Returns an invite object. Fires an Invite Create Gateway event."
+    },
+    {
+        "name": "Delete Channel Permission",
+        "method": "DELETE",
+        "url": "/channels/{channel.id}/permissions/{overwrite.id}",
+        "description": "Delete a channel permission overwrite for a user or role in a channel. Only usable for guild channels. Requires the MANAGE_ROLES permission. Returns a 204 empty response on success. For more information about permissions, see permissions"
+    },
+    {
+        "name": "Follow News Channel",
+        "method": "POST",
+        "url": "/channels/{channel.id}/followers",
+        "description": "Follow a News Channel to send messages to a target channel. Requires the MANAGE_WEBHOOKS permission in the target channel. Returns a followed channel object."
+    },
+    {
+        "name": "Trigger Typing Indicator",
+        "method": "POST",
+        "url": "/channels/{channel.id}/typing",
+        "description": "Post a typing indicator for the specified channel. Generally bots should not implement this route. However, if a bot is responding to a command and expects the computation to take a few seconds, this endpoint may be called to let the user know that the bot is processing their message. Returns a 204 empty response on success. Fires a Typing Start Gateway event."
+    },
+    {
+        "name": "Get Pinned Messages",
+        "method": "GET",
+        "url": "/channels/{channel.id}/pins",
+        "description": "Returns all pinned messages in the channel as an array of message objects."
+    },
+    {
+        "name": "Pin Message",
+        "method": "PUT",
+        "url": "/channels/{channel.id}/pins/{message.id}",
+        "description": "Pin a message in a channel. Requires the MANAGE_MESSAGES permission. Returns a 204 empty response on success."
+    },
+    {
+        "name": "Unpin Message",
+        "method": "DELETE",
+        "url": "/channels/{channel.id}/pins/{message.id}",
+        "description": "Unpin a message in a channel. Requires the MANAGE_MESSAGES permission. Returns a 204 empty response on success."
+    },
+    {
+        "name": "Group DM Add Recipient",
+        "method": "PUT",
+        "url": "/channels/{channel.id}/recipients/{user.id}",
+        "description": "Adds a recipient to a Group DM using their access token."
+    },
+    {
+        "name": "Group DM Remove Recipient",
+        "method": "DELETE",
+        "url": "/channels/{channel.id}/recipients/{user.id}",
+        "description": "Removes a recipient from a Group DM."
+    },
+    {
+        "name": "Start Thread with Message",
+        "method": "POST",
+        "url": "/channels/{channel.id}/messages/{message.id}/threads",
+        "description": "Creates a new thread from an existing message. Returns a channel on success, and a 400 BAD REQUEST on invalid parameters. Fires a Thread Create Gateway event."
+    },
+    {
+        "name": "Start Thread without Message",
+        "method": "POST",
+        "url": "/channels/{channel.id}/threads",
+        "description": "Creates a new thread that is not connected to an existing message. The created thread defaults to a GUILD_PRIVATE_THREAD*. Returns a channel on success, and a 400 BAD REQUEST on invalid parameters. Fires a Thread Create Gateway event."
+    },
+    {
+        "name": "Join Thread",
+        "method": "PUT",
+        "url": "/channels/{channel.id}/thread-members/@me",
+        "description": "Adds the current user to a thread. Also requires the thread is not archived. Returns a 204 empty response on success. Fires a Thread Members Update Gateway event."
+    },
+    {
+        "name": "Add Thread Member",
+        "method": "PUT",
+        "url": "/channels/{channel.id}/thread-members/{user.id}",
+        "description": "Adds another member to a thread. Requires the ability to send messages in the thread. Also requires the thread is not archived. Returns a 204 empty response if the member is successfully added or was already a member of the thread. Fires a Thread Members Update Gateway event."
+    },
+    {
+        "name": "Leave Thread",
+        "method": "DELETE",
+        "url": "/channels/{channel.id}/thread-members/@me",
+        "description": "Removes the current user from a thread. Also requires the thread is not archived. Returns a 204 empty response on success. Fires a Thread Members Update Gateway event."
+    },
+    {
+        "name": "Remove Thread Member",
+        "method": "DELETE",
+        "url": "/channels/{channel.id}/thread-members/{user.id}",
+        "description": "Removes another member from a thread. Requires the MANAGE_THREADS permission, or the creator of the thread if it is a GUILD_PRIVATE_THREAD. Also requires the thread is not archived. Returns a 204 empty response on success. Fires a Thread Members Update Gateway event."
+    },
+    {
+        "name": "Get Thread Member",
+        "method": "GET",
+        "url": "/channels/{channel.id}/thread-members/{user.id}",
+        "description": "Returns a thread member object for the specified user if they are a member of the thread, returns a 404 response otherwise."
+    },
+    {
+        "name": "List Thread Members",
+        "method": "GET",
+        "url": "/channels/{channel.id}/thread-members",
+        "description": "Returns array of thread members objects that are members of the thread."
+    },
+    {
+        "name": "List Active Threads",
+        "method": "GET",
+        "url": "/channels/{channel.id}/threads/active",
+        "description": "Returns all active threads in the channel, including public and private threads. Threads are ordered by their id, in descending order."
+    },
+    {
+        "name": "List Public Archived Threads",
+        "method": "GET",
+        "url": "/channels/{channel.id}/threads/archived/public",
+        "description": "Returns archived threads in the channel that are public. When called on a GUILD_TEXT channel, returns threads of type GUILD_PUBLIC_THREAD. When called on a GUILD_NEWS channel returns threads of type GUILD_NEWS_THREAD. Threads are ordered by archive_timestamp, in descending order. Requires the READ_MESSAGE_HISTORY permission."
+    },
+    {
+        "name": "List Private Archived Threads",
+        "method": "GET",
+        "url": "/channels/{channel.id}/threads/archived/private",
+        "description": "Returns archived threads in the channel that are of type GUILD_PRIVATE_THREAD. Threads are ordered by archive_timestamp, in descending order. Requires both the READ_MESSAGE_HISTORY and MANAGE_THREADS permissions."
+    },
+    {
+        "name": "List Joined Private Archived Threads",
+        "method": "GET",
+        "url": "/channels/{channel.id}/users/@me/threads/archived/private",
+        "description": "Returns archived threads in the channel that are of type GUILD_PRIVATE_THREAD, and the user has joined. Threads are ordered by their id, in descending order. Requires the READ_MESSAGE_HISTORY permission."
+    }
+]

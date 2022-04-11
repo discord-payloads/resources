@@ -1,0 +1,37 @@
+[
+    {
+        "name": "uses",
+        "type": "integer",
+        "description": "number of times this invite has been used",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "max_uses",
+        "type": "integer",
+        "description": "max number of times this invite can be used",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "max_age",
+        "type": "integer",
+        "description": "duration (in seconds) after which the invite expires",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "temporary",
+        "type": "boolean",
+        "description": "whether this invite only grants temporary membership",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "created_at",
+        "type": "ISO8601 timestamp",
+        "description": "when this invite was created",
+        "optional": false,
+        "nullable": false
+    }
+]

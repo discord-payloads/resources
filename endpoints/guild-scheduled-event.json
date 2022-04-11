@@ -1,0 +1,38 @@
+[
+    {
+        "name": "List Scheduled Events for Guild",
+        "method": "GET",
+        "url": "/guilds/{guild.id}/scheduled-events",
+        "description": "Returns a list of guild scheduled event objects for the given guild."
+    },
+    {
+        "name": "Create Guild Scheduled Event",
+        "method": "POST",
+        "url": "/guilds/{guild.id}/scheduled-events",
+        "description": "Create a guild scheduled event in the guild. Returns a guild scheduled event object on success."
+    },
+    {
+        "name": "Get Guild Scheduled Event",
+        "method": "GET",
+        "url": "/guilds/{guild.id}/scheduled-events/{guild_scheduled_event.id}",
+        "description": "Get a guild scheduled event. Returns a guild scheduled event object on success."
+    },
+    {
+        "name": "Modify Guild Scheduled Event",
+        "method": "PATCH",
+        "url": "/guilds/{guild.id}/scheduled-events/{guild_scheduled_event.id}",
+        "description": "Modify a guild scheduled event. Returns the modified guild scheduled event object on success."
+    },
+    {
+        "name": "Delete Guild Scheduled Event",
+        "method": "DELETE",
+        "url": "/guilds/{guild.id}/scheduled-events/{guild_scheduled_event.id}",
+        "description": "Delete a guild scheduled event. Returns a 204 on success."
+    },
+    {
+        "name": "Get Guild Scheduled Event Users",
+        "method": "GET",
+        "url": "/guilds/{guild.id}/scheduled-events/{guild_scheduled_event.id}/users",
+        "description": "Get a list of guild scheduled event users subscribed to a guild scheduled event. Returns a list of guild scheduled event user objects on success. Guild member data, if it exists, is included if the with_member query parameter is set."
+    }
+]

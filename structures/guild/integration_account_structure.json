@@ -1,0 +1,16 @@
+[
+    {
+        "name": "id",
+        "type": "string",
+        "description": "id of the account",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "name",
+        "type": "string",
+        "description": "name of the account",
+        "optional": false,
+        "nullable": false
+    }
+]

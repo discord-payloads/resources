@@ -1,0 +1,1024 @@
+[
+    {
+        "name": "Ready",
+        "payload": "None",
+        "description": "The ready event is dispatched when a client has completed the initial handshake with the gateway (for new sessions). The ready event can be the largest and most complex event the gateway will send, as it contains all the state required for a client to begin interacting with the rest of the platform.",
+        "fields": [
+            {
+                "name": "v",
+                "type": "integer",
+                "description": "gateway version",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "user",
+                "type": "user object",
+                "description": "information about the user including email",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "guilds",
+                "type": "array of Unavailable Guild objects",
+                "description": "the guilds the user is in",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "session_id",
+                "type": "string",
+                "description": "used for resuming connections",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "shard",
+                "type": "array of two integers (shard_id, num_shards)",
+                "description": "the shard information associated with this session, if sent when identifying",
+                "optional": true,
+                "nullable": false
+            },
+            {
+                "name": "application",
+                "type": "partial application object",
+                "description": "contains id and flags",
+                "optional": false,
+                "nullable": false
+            }
+        ]
+    },
+    {
+        "name": "Channel Pins Update",
+        "payload": "None",
+        "description": "Sent when a message is pinned or unpinned in a text channel. This is not sent when a pinned message is deleted.",
+        "fields": [
+            {
+                "name": "guild_id",
+                "type": "snowflake",
+                "description": "the id of the guild",
+                "optional": true,
+                "nullable": false
+            },
+            {
+                "name": "channel_id",
+                "type": "snowflake",
+                "description": "the id of the channel",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "last_pin_timestamp",
+                "type": "ISO8601 timestamp",
+                "description": "the time at which the most recent pinned message was pinned",
+                "optional": true,
+                "nullable": true
+            }
+        ]
+    },
+    {
+        "name": "Thread List Sync",
+        "payload": "None",
+        "description": "Sent when the current user gains access to a channel.",
+        "fields": [
+            {
+                "name": "guild_id",
+                "type": "snowflake",
+                "description": "the id of the guild",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "channel_ids",
+                "type": "array of snowflakes",
+                "description": "the parent channel ids whose threads are being synced.  If omitted, then threads were synced for the entire guild.  This array may contain channel_ids that have no active threads as well, so you know to clear that data.",
+                "optional": true,
+                "nullable": false
+            },
+            {
+                "name": "threads",
+                "type": "array of channel objects",
+                "description": "all active threads in the given channels that the current user can access",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "members",
+                "type": "array of thread member objects",
+                "description": "all thread member objects from the synced threads for the current user, indicating which threads the current user has been added to",
+                "optional": false,
+                "nullable": false
+            }
+        ]
+    },
+    {
+        "name": "Thread Members Update",
+        "payload": "None",
+        "description": "Sent when anyone is added to or removed from a thread.  If the current user does not have the GUILD_MEMBERS Gateway Intent, then this event will only be sent if the current user was added to or removed from the thread.",
+        "fields": [
+            {
+                "name": "id",
+                "type": "snowflake",
+                "description": "the id of the thread",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "guild_id",
+                "type": "snowflake",
+                "description": "the id of the guild",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "member_count",
+                "type": "integer",
+                "description": "the approximate number of members in the thread, capped at 50",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "added_members*",
+                "type": "array of thread member objects",
+                "description": "the users who were added to the thread",
+                "optional": true,
+                "nullable": false
+            },
+            {
+                "name": "removed_member_ids",
+                "type": "array of snowflakes",
+                "description": "the id of the users who were removed from the thread",
+                "optional": true,
+                "nullable": false
+            }
+        ]
+    },
+    {
+        "name": "Guild Ban Add",
+        "payload": "None",
+        "description": "Sent when a user is banned from a guild.",
+        "fields": [
+            {
+                "name": "guild_id",
+                "type": "snowflake",
+                "description": "id of the guild",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "user",
+                "type": "a user object",
+                "description": "the banned user",
+                "optional": false,
+                "nullable": false
+            }
+        ]
+    },
+    {
+        "name": "Guild Ban Remove",
+        "payload": "None",
+        "description": "Sent when a user is unbanned from a guild.",
+        "fields": [
+            {
+                "name": "guild_id",
+                "type": "snowflake",
+                "description": "id of the guild",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "user",
+                "type": "a user object",
+                "description": "the unbanned user",
+                "optional": false,
+                "nullable": false
+            }
+        ]
+    },
+    {
+        "name": "Guild Emojis Update",
+        "payload": "None",
+        "description": "Sent when a guild's emojis have been updated.",
+        "fields": [
+            {
+                "name": "guild_id",
+                "type": "snowflake",
+                "description": "id of the guild",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "emojis",
+                "type": "array",
+                "description": "array of emojis",
+                "optional": false,
+                "nullable": false
+            }
+        ]
+    },
+    {
+        "name": "Guild Stickers Update",
+        "payload": "None",
+        "description": "Sent when a guild's stickers have been updated.",
+        "fields": [
+            {
+                "name": "guild_id",
+                "type": "snowflake",
+                "description": "id of the guild",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "stickers",
+                "type": "array",
+                "description": "array of stickers",
+                "optional": false,
+                "nullable": false
+            }
+        ]
+    },
+    {
+        "name": "Guild Integrations Update",
+        "payload": "None",
+        "description": "Sent when a guild integration is updated.",
+        "fields": [
+            {
+                "name": "guild_id",
+                "type": "snowflake",
+                "description": "id of the guild whose integrations were updated",
+                "optional": false,
+                "nullable": false
+            }
+        ]
+    },
+    {
+        "name": "Guild Member Remove",
+        "payload": "None",
+        "description": "Sent when a user is removed from a guild (leave/kick/ban).",
+        "fields": [
+            {
+                "name": "guild_id",
+                "type": "snowflake",
+                "description": "the id of the guild",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "user",
+                "type": "a user object",
+                "description": "the user who was removed",
+                "optional": false,
+                "nullable": false
+            }
+        ]
+    },
+    {
+        "name": "Guild Member Update",
+        "payload": "None",
+        "description": "Sent when a guild member is updated. This will also fire when the user object of a guild member changes.",
+        "fields": [
+            {
+                "name": "guild_id",
+                "type": "snowflake",
+                "description": "the id of the guild",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "roles",
+                "type": "array of snowflakes",
+                "description": "user role ids",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "user",
+                "type": "a user object",
+                "description": "the user",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "nick",
+                "type": "string",
+                "description": "nickname of the user in the guild",
+                "optional": true,
+                "nullable": true
+            },
+            {
+                "name": "avatar",
+                "type": "string",
+                "description": "the member's guild avatar hash",
+                "optional": false,
+                "nullable": true
+            },
+            {
+                "name": "joined_at",
+                "type": "ISO8601 timestamp",
+                "description": "when the user joined the guild",
+                "optional": false,
+                "nullable": true
+            },
+            {
+                "name": "premium_since",
+                "type": "ISO8601 timestamp",
+                "description": "when the user starting boosting the guild",
+                "optional": true,
+                "nullable": true
+            },
+            {
+                "name": "deaf",
+                "type": "boolean",
+                "description": "whether the user is deafened in voice channels",
+                "optional": true,
+                "nullable": false
+            },
+            {
+                "name": "mute",
+                "type": "boolean",
+                "description": "whether the user is muted in voice channels",
+                "optional": true,
+                "nullable": false
+            },
+            {
+                "name": "pending",
+                "type": "boolean",
+                "description": "whether the user has not yet passed the guild's Membership Screening requirements",
+                "optional": true,
+                "nullable": false
+            },
+            {
+                "name": "communication_disabled_until",
+                "type": "ISO8601 timestamp",
+                "description": "when the user's timeout will expire and the user will be able to communicate in the guild again, null or a time in the past if the user is not timed out",
+                "optional": true,
+                "nullable": true
+            }
+        ]
+    },
+    {
+        "name": "Guild Members Chunk",
+        "payload": "None",
+        "description": "Sent in response to Guild Request Members.\nYou can use the chunk_index and chunk_count to calculate how many chunks are left for your request.",
+        "fields": [
+            {
+                "name": "guild_id",
+                "type": "snowflake",
+                "description": "the id of the guild",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "members",
+                "type": "array of guild member objects",
+                "description": "set of guild members",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "chunk_index",
+                "type": "integer",
+                "description": "the chunk index in the expected chunks for this response (0 <= chunk_index < chunk_count)",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "chunk_count",
+                "type": "integer",
+                "description": "the total number of expected chunks for this response",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "not_found",
+                "type": "array",
+                "description": "if passing an invalid id to REQUEST_GUILD_MEMBERS, it will be returned here",
+                "optional": true,
+                "nullable": false
+            },
+            {
+                "name": "presences",
+                "type": "array of presence objects",
+                "description": "if passing true to REQUEST_GUILD_MEMBERS, presences of the returned members will be here",
+                "optional": true,
+                "nullable": false
+            },
+            {
+                "name": "nonce",
+                "type": "string",
+                "description": "the nonce used in the Guild Members Request",
+                "optional": true,
+                "nullable": false
+            }
+        ]
+    },
+    {
+        "name": "Guild Role Create",
+        "payload": "None",
+        "description": "Sent when a guild role is created.",
+        "fields": [
+            {
+                "name": "guild_id",
+                "type": "snowflake",
+                "description": "the id of the guild",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "role",
+                "type": "a role object",
+                "description": "the role created",
+                "optional": false,
+                "nullable": false
+            }
+        ]
+    },
+    {
+        "name": "Guild Role Update",
+        "payload": "None",
+        "description": "Sent when a guild role is updated.",
+        "fields": [
+            {
+                "name": "guild_id",
+                "type": "snowflake",
+                "description": "the id of the guild",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "role",
+                "type": "a role object",
+                "description": "the role updated",
+                "optional": false,
+                "nullable": false
+            }
+        ]
+    },
+    {
+        "name": "Guild Role Delete",
+        "payload": "None",
+        "description": "Sent when a guild role is deleted.",
+        "fields": [
+            {
+                "name": "guild_id",
+                "type": "snowflake",
+                "description": "id of the guild",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "role_id",
+                "type": "snowflake",
+                "description": "id of the role",
+                "optional": false,
+                "nullable": false
+            }
+        ]
+    },
+    {
+        "name": "Guild Scheduled Event User Add",
+        "payload": "None",
+        "description": "Sent when a user has subscribed to a guild scheduled event.",
+        "fields": [
+            {
+                "name": "guild_scheduled_event_id",
+                "type": "snowflake",
+                "description": "id of the guild scheduled event",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "user_id",
+                "type": "snowflake",
+                "description": "id of the user",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "guild_id",
+                "type": "snowflake",
+                "description": "id of the guild",
+                "optional": false,
+                "nullable": false
+            }
+        ]
+    },
+    {
+        "name": "Guild Scheduled Event User Remove",
+        "payload": "None",
+        "description": "Sent when a user has unsubscribed from a guild scheduled event.",
+        "fields": [
+            {
+                "name": "guild_scheduled_event_id",
+                "type": "snowflake",
+                "description": "id of the guild scheduled event",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "user_id",
+                "type": "snowflake",
+                "description": "id of the user",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "guild_id",
+                "type": "snowflake",
+                "description": "id of the guild",
+                "optional": false,
+                "nullable": false
+            }
+        ]
+    },
+    {
+        "name": "Integration Delete",
+        "payload": "None",
+        "description": "Sent when an integration is deleted.",
+        "fields": [
+            {
+                "name": "id",
+                "type": "snowflake",
+                "description": "integration id",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "guild_id",
+                "type": "snowflake",
+                "description": "id of the guild",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "application_id",
+                "type": "snowflake",
+                "description": "id of the bot/OAuth2 application for this discord integration",
+                "optional": true,
+                "nullable": false
+            }
+        ]
+    },
+    {
+        "name": "Invite Create",
+        "payload": "None",
+        "description": "Sent when a new invite to a channel is created.",
+        "fields": [
+            {
+                "name": "channel_id",
+                "type": "snowflake",
+                "description": "the channel the invite is for",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "code",
+                "type": "string",
+                "description": "the unique invite code",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "created_at",
+                "type": "ISO8601 timestamp",
+                "description": "the time at which the invite was created",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "guild_id",
+                "type": "snowflake",
+                "description": "the guild of the invite",
+                "optional": true,
+                "nullable": false
+            },
+            {
+                "name": "inviter",
+                "type": "user object",
+                "description": "the user that created the invite",
+                "optional": true,
+                "nullable": false
+            },
+            {
+                "name": "max_age",
+                "type": "integer",
+                "description": "how long the invite is valid for (in seconds)",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "max_uses",
+                "type": "integer",
+                "description": "the maximum number of times the invite can be used",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "target_type",
+                "type": "integer",
+                "description": "the type of target for this voice channel invite",
+                "optional": true,
+                "nullable": false
+            },
+            {
+                "name": "target_user",
+                "type": "user object",
+                "description": "the user whose stream to display for this voice channel stream invite",
+                "optional": true,
+                "nullable": false
+            },
+            {
+                "name": "target_application",
+                "type": "partial application object",
+                "description": "the embedded application to open for this voice channel embedded application invite",
+                "optional": true,
+                "nullable": false
+            },
+            {
+                "name": "temporary",
+                "type": "boolean",
+                "description": "whether or not the invite is temporary (invited users will be kicked on disconnect unless they're assigned a role)",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "uses",
+                "type": "integer",
+                "description": "how many times the invite has been used (always will be 0)",
+                "optional": false,
+                "nullable": false
+            }
+        ]
+    },
+    {
+        "name": "Invite Delete",
+        "payload": "None",
+        "description": "Sent when an invite is deleted.",
+        "fields": [
+            {
+                "name": "channel_id",
+                "type": "snowflake",
+                "description": "the channel of the invite",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "guild_id",
+                "type": "snowflake",
+                "description": "the guild of the invite",
+                "optional": true,
+                "nullable": false
+            },
+            {
+                "name": "code",
+                "type": "string",
+                "description": "the unique invite code",
+                "optional": false,
+                "nullable": false
+            }
+        ]
+    },
+    {
+        "name": "Message Delete",
+        "payload": "None",
+        "description": "Sent when a message is deleted.",
+        "fields": [
+            {
+                "name": "id",
+                "type": "snowflake",
+                "description": "the id of the message",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "channel_id",
+                "type": "snowflake",
+                "description": "the id of the channel",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "guild_id",
+                "type": "snowflake",
+                "description": "the id of the guild",
+                "optional": true,
+                "nullable": false
+            }
+        ]
+    },
+    {
+        "name": "Message Delete Bulk",
+        "payload": "None",
+        "description": "Sent when multiple messages are deleted at once.",
+        "fields": [
+            {
+                "name": "ids",
+                "type": "array of snowflakes",
+                "description": "the ids of the messages",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "channel_id",
+                "type": "snowflake",
+                "description": "the id of the channel",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "guild_id",
+                "type": "snowflake",
+                "description": "the id of the guild",
+                "optional": true,
+                "nullable": false
+            }
+        ]
+    },
+    {
+        "name": "Message Reaction Add",
+        "payload": "None",
+        "description": "Sent when a user adds a reaction to a message.",
+        "fields": [
+            {
+                "name": "user_id",
+                "type": "snowflake",
+                "description": "the id of the user",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "channel_id",
+                "type": "snowflake",
+                "description": "the id of the channel",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "message_id",
+                "type": "snowflake",
+                "description": "the id of the message",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "guild_id",
+                "type": "snowflake",
+                "description": "the id of the guild",
+                "optional": true,
+                "nullable": false
+            },
+            {
+                "name": "member",
+                "type": "member object",
+                "description": "the member who reacted if this happened in a guild",
+                "optional": true,
+                "nullable": false
+            },
+            {
+                "name": "emoji",
+                "type": "a partial emoji object",
+                "description": "the emoji used to react - example",
+                "optional": false,
+                "nullable": false
+            }
+        ]
+    },
+    {
+        "name": "Message Reaction Remove",
+        "payload": "None",
+        "description": "Sent when a user removes a reaction from a message.",
+        "fields": [
+            {
+                "name": "user_id",
+                "type": "snowflake",
+                "description": "the id of the user",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "channel_id",
+                "type": "snowflake",
+                "description": "the id of the channel",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "message_id",
+                "type": "snowflake",
+                "description": "the id of the message",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "guild_id",
+                "type": "snowflake",
+                "description": "the id of the guild",
+                "optional": true,
+                "nullable": false
+            },
+            {
+                "name": "emoji",
+                "type": "a partial emoji object",
+                "description": "the emoji used to react - example",
+                "optional": false,
+                "nullable": false
+            }
+        ]
+    },
+    {
+        "name": "Message Reaction Remove All",
+        "payload": "None",
+        "description": "Sent when a user explicitly removes all reactions from a message.",
+        "fields": [
+            {
+                "name": "channel_id",
+                "type": "snowflake",
+                "description": "the id of the channel",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "message_id",
+                "type": "snowflake",
+                "description": "the id of the message",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "guild_id",
+                "type": "snowflake",
+                "description": "the id of the guild",
+                "optional": true,
+                "nullable": false
+            }
+        ]
+    },
+    {
+        "name": "Message Reaction Remove Emoji",
+        "payload": "None",
+        "description": "Sent when a bot removes all instances of a given emoji from the reactions of a message.",
+        "fields": [
+            {
+                "name": "channel_id",
+                "type": "snowflake",
+                "description": "the id of the channel",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "guild_id",
+                "type": "snowflake",
+                "description": "the id of the guild",
+                "optional": true,
+                "nullable": false
+            },
+            {
+                "name": "message_id",
+                "type": "snowflake",
+                "description": "the id of the message",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "emoji",
+                "type": "partial emoji object",
+                "description": "the emoji that was removed",
+                "optional": false,
+                "nullable": false
+            }
+        ]
+    },
+    {
+        "name": "Presence Update",
+        "payload": "None",
+        "description": "A user's presence is their current state on a guild. This event is sent when a user's presence or info, such as name or avatar, is updated.",
+        "fields": [
+            {
+                "name": "user",
+                "type": "user object",
+                "description": "the user presence is being updated for",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "guild_id",
+                "type": "snowflake",
+                "description": "id of the guild",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "status",
+                "type": "string",
+                "description": "either \"idle\", \"dnd\", \"online\", or \"offline\"",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "activities",
+                "type": "array of activity objects",
+                "description": "user's current activities",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "client_status",
+                "type": "client_status object",
+                "description": "user's platform-dependent status",
+                "optional": false,
+                "nullable": false
+            }
+        ]
+    },
+    {
+        "name": "Typing Start",
+        "payload": "None",
+        "description": "Sent when a user starts typing in a channel.",
+        "fields": [
+            {
+                "name": "channel_id",
+                "type": "snowflake",
+                "description": "id of the channel",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "guild_id",
+                "type": "snowflake",
+                "description": "id of the guild",
+                "optional": true,
+                "nullable": false
+            },
+            {
+                "name": "user_id",
+                "type": "snowflake",
+                "description": "id of the user",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "timestamp",
+                "type": "integer",
+                "description": "unix time (in seconds) of when the user started typing",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "member",
+                "type": "member object",
+                "description": "the member who started typing if this happened in a guild",
+                "optional": true,
+                "nullable": false
+            }
+        ]
+    },
+    {
+        "name": "Voice Server Update",
+        "payload": "None",
+        "description": "Sent when a guild's voice server is updated. This is sent when initially connecting to voice, and when the current voice instance fails over to a new server.",
+        "fields": [
+            {
+                "name": "token",
+                "type": "string",
+                "description": "voice connection token",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "guild_id",
+                "type": "snowflake",
+                "description": "the guild this voice server update is for",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "endpoint",
+                "type": "string",
+                "description": "the voice server host",
+                "optional": false,
+                "nullable": true
+            }
+        ]
+    },
+    {
+        "name": "Webhooks Update",
+        "payload": "None",
+        "description": "Sent when a guild channel's webhook is created, updated, or deleted.",
+        "fields": [
+            {
+                "name": "guild_id",
+                "type": "snowflake",
+                "description": "id of the guild",
+                "optional": false,
+                "nullable": false
+            },
+            {
+                "name": "channel_id",
+                "type": "snowflake",
+                "description": "id of the channel",
+                "optional": false,
+                "nullable": false
+            }
+        ]
+    }
+]

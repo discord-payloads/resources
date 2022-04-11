@@ -1,0 +1,65 @@
+[
+    {
+        "name": "type",
+        "type": "integer",
+        "description": "4 for a text input",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "custom_id",
+        "type": "string",
+        "description": "a developer-defined identifier for the input, max 100 characters",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "style",
+        "type": "integer",
+        "description": "the Text Input Style",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "label",
+        "type": "string",
+        "description": "the label for this component, max 45 characters",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "min_length",
+        "type": "integer",
+        "description": "the minimum input length for a text input, min 0, max 4000",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "max_length",
+        "type": "integer",
+        "description": "the maximum input length for a text input, min 1, max 4000",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "required",
+        "type": "boolean",
+        "description": "whether this component is required to be filled, default true",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "value",
+        "type": "string",
+        "description": "a pre-filled value for this component, max 4000 characters",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "placeholder",
+        "type": "string",
+        "description": "custom placeholder text if the input is empty, max 100 characters",
+        "optional": true,
+        "nullable": false
+    }
+]

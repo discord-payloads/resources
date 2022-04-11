@@ -1,0 +1,44 @@
+[
+    {
+        "name": "id",
+        "type": "snowflake",
+        "description": "guild id",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "name",
+        "type": "string",
+        "description": "guild name (2-100 characters)",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "instant_invite",
+        "type": "string",
+        "description": "instant invite for the guilds specified widget invite channel",
+        "optional": false,
+        "nullable": true
+    },
+    {
+        "name": "channels",
+        "type": "array of partial channel objects",
+        "description": "voice and stage channels which are accessible by @everyone",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "members",
+        "type": "array of partial user objects",
+        "description": "special widget user objects that includes users presence (Limit 100)",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "presence_count",
+        "type": "integer",
+        "description": "number of online members in this guild",
+        "optional": false,
+        "nullable": false
+    }
+]

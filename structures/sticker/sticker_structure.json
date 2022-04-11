@@ -1,0 +1,86 @@
+[
+    {
+        "name": "id",
+        "type": "snowflake",
+        "description": "id of the sticker",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "pack_id",
+        "type": "snowflake",
+        "description": "for standard stickers, id of the pack the sticker is from",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "name",
+        "type": "string",
+        "description": "name of the sticker",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "description",
+        "type": "string",
+        "description": "description of the sticker",
+        "optional": false,
+        "nullable": true
+    },
+    {
+        "name": "tags",
+        "type": "string",
+        "description": "autocomplete/suggestion tags for the sticker (max 200 characters)",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "asset",
+        "type": "string",
+        "description": "Deprecated previously the sticker asset hash, now an empty string",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "type",
+        "type": "integer",
+        "description": "type of sticker",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "format_type",
+        "type": "integer",
+        "description": "type of sticker format",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "available",
+        "type": "boolean",
+        "description": "whether this guild sticker can be used, may be false due to loss of Server Boosts",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "guild_id",
+        "type": "snowflake",
+        "description": "id of the guild that owns this sticker",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "user",
+        "type": "user object",
+        "description": "the user that uploaded the guild sticker",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "sort_value",
+        "type": "integer",
+        "description": "the standard sticker's sort order within its pack",
+        "optional": true,
+        "nullable": false
+    }
+]

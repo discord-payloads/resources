@@ -1,0 +1,114 @@
+[
+    {
+        "name": "id",
+        "type": "snowflake",
+        "description": "the id of the scheduled event",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "guild_id",
+        "type": "snowflake",
+        "description": "the guild id which the scheduled event belongs to",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "channel_id",
+        "type": "snowflake",
+        "description": "the channel id in which the scheduled event will be hosted, or null if scheduled entity type is EXTERNAL",
+        "optional": false,
+        "nullable": true
+    },
+    {
+        "name": "creator_id",
+        "type": "snowflake",
+        "description": "the id of the user that created the scheduled event *",
+        "optional": true,
+        "nullable": true
+    },
+    {
+        "name": "name",
+        "type": "string",
+        "description": "the name of the scheduled event (1-100 characters)",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "description",
+        "type": "string",
+        "description": "the description of the scheduled event (1-1000 characters)",
+        "optional": true,
+        "nullable": true
+    },
+    {
+        "name": "scheduled_start_time",
+        "type": "ISO8601 timestamp",
+        "description": "the time the scheduled event will start",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "scheduled_end_time",
+        "type": "ISO8601 timestamp",
+        "description": "the time the scheduled event will end, required if entity_type is EXTERNAL",
+        "optional": false,
+        "nullable": true
+    },
+    {
+        "name": "privacy_level",
+        "type": "privacy level",
+        "description": "the privacy level of the scheduled event",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "status",
+        "type": "event status",
+        "description": "the status of the scheduled event",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "entity_type",
+        "type": "scheduled entity type",
+        "description": "the type of the scheduled event",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "entity_id",
+        "type": "snowflake",
+        "description": "the id of an entity associated with a guild scheduled event",
+        "optional": false,
+        "nullable": true
+    },
+    {
+        "name": "entity_metadata",
+        "type": "entity metadata",
+        "description": "additional metadata for the guild scheduled event",
+        "optional": false,
+        "nullable": true
+    },
+    {
+        "name": "creator",
+        "type": "user object",
+        "description": "the user that created the scheduled event",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "user_count",
+        "type": "integer",
+        "description": "the number of users subscribed to the scheduled event",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "image",
+        "type": "string",
+        "description": "the cover image hash of the scheduled event",
+        "optional": true,
+        "nullable": true
+    }
+]

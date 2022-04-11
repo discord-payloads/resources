@@ -1,0 +1,23 @@
+[
+    {
+        "name": "new_value",
+        "type": "mixed",
+        "description": "new value of the key",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "old_value",
+        "type": "mixed",
+        "description": "old value of the key",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "key",
+        "type": "string",
+        "description": "name of audit log change key",
+        "optional": false,
+        "nullable": false
+    }
+]

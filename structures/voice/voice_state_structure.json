@@ -1,0 +1,93 @@
+[
+    {
+        "name": "guild_id",
+        "type": "snowflake",
+        "description": "the guild id this voice state is for",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "channel_id",
+        "type": "snowflake",
+        "description": "the channel id this user is connected to",
+        "optional": false,
+        "nullable": true
+    },
+    {
+        "name": "user_id",
+        "type": "snowflake",
+        "description": "the user id this voice state is for",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "member",
+        "type": "guild member object",
+        "description": "the guild member this voice state is for",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "session_id",
+        "type": "string",
+        "description": "the session id for this voice state",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "deaf",
+        "type": "boolean",
+        "description": "whether this user is deafened by the server",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "mute",
+        "type": "boolean",
+        "description": "whether this user is muted by the server",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "self_deaf",
+        "type": "boolean",
+        "description": "whether this user is locally deafened",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "self_mute",
+        "type": "boolean",
+        "description": "whether this user is locally muted",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "self_stream",
+        "type": "boolean",
+        "description": "whether this user is streaming using \"Go Live\"",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "self_video",
+        "type": "boolean",
+        "description": "whether this user's camera is enabled",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "suppress",
+        "type": "boolean",
+        "description": "whether this user is muted by the current user",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "request_to_speak_timestamp",
+        "type": "ISO8601 timestamp",
+        "description": "the time at which the user requested to speak",
+        "optional": false,
+        "nullable": true
+    }
+]

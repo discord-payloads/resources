@@ -1,0 +1,107 @@
+[
+    {
+        "name": "id",
+        "type": "snowflake",
+        "description": "integration id",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "name",
+        "type": "string",
+        "description": "integration name",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "type",
+        "type": "string",
+        "description": "integration type (twitch, youtube, or discord)",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "enabled",
+        "type": "boolean",
+        "description": "is this integration enabled",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "syncing",
+        "type": "boolean",
+        "description": "is this integration syncing",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "role_id",
+        "type": "snowflake",
+        "description": "id that this integration uses for \"subscribers\"",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "enable_emoticons",
+        "type": "boolean",
+        "description": "whether emoticons should be synced for this integration (twitch only currently)",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "expire_behavior",
+        "type": "integration expire behavior",
+        "description": "the behavior of expiring subscribers",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "expire_grace_period",
+        "type": "integer",
+        "description": "the grace period (in days) before expiring subscribers",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "user",
+        "type": "user object",
+        "description": "user for this integration",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "account",
+        "type": "account object",
+        "description": "integration account information",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "synced_at",
+        "type": "ISO8601 timestamp",
+        "description": "when this integration was last synced",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "subscriber_count",
+        "type": "integer",
+        "description": "how many subscribers this integration has",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "revoked",
+        "type": "boolean",
+        "description": "has this integration been revoked",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "application",
+        "type": "application object",
+        "description": "The bot/OAuth2 application for discord integrations",
+        "optional": true,
+        "nullable": false
+    }
+]

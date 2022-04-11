@@ -1,0 +1,30 @@
+[
+    {
+        "name": "id",
+        "type": "snowflake",
+        "description": "id of the channel",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "guild_id",
+        "type": "snowflake",
+        "description": "id of the guild containing the channel",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "type",
+        "type": "integer",
+        "description": "the type of channel",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "name",
+        "type": "string",
+        "description": "the name of the channel",
+        "optional": false,
+        "nullable": false
+    }
+]

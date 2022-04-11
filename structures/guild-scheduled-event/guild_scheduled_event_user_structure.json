@@ -1,0 +1,23 @@
+[
+    {
+        "name": "guild_scheduled_event_id",
+        "type": "snowflake",
+        "description": "the scheduled event id which the user subscribed to",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "user",
+        "type": "user",
+        "description": "user which subscribed to an event",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "member",
+        "type": "guild member",
+        "description": "guild member data for this user for the guild which this event belongs to, if any",
+        "optional": true,
+        "nullable": false
+    }
+]

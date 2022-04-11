@@ -1,0 +1,30 @@
+[
+    {
+        "name": "id",
+        "type": "snowflake",
+        "description": "the id of the thread",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "user_id",
+        "type": "snowflake",
+        "description": "the id of the user",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "join_timestamp",
+        "type": "ISO8601 timestamp",
+        "description": "the time the current user last joined the thread",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "flags",
+        "type": "integer",
+        "description": "any user-thread settings, currently only used for notifications",
+        "optional": false,
+        "nullable": false
+    }
+]

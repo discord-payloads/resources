@@ -1,0 +1,30 @@
+[
+    {
+        "name": "id",
+        "type": "snowflake",
+        "description": "role or user id",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "type",
+        "type": "int",
+        "description": "either 0 (role) or 1 (member)",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "allow",
+        "type": "string",
+        "description": "permission bit set",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "deny",
+        "type": "string",
+        "description": "permission bit set",
+        "optional": false,
+        "nullable": false
+    }
+]

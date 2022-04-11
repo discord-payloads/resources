@@ -1,0 +1,86 @@
+[
+    {
+        "name": "code",
+        "type": "string",
+        "description": "the invite code (unique ID)",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "guild",
+        "type": "partial guild object",
+        "description": "the guild this invite is for",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "channel",
+        "type": "partial channel object",
+        "description": "the channel this invite is for",
+        "optional": false,
+        "nullable": true
+    },
+    {
+        "name": "inviter",
+        "type": "user object",
+        "description": "the user who created the invite",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "target_type",
+        "type": "integer",
+        "description": "the type of target for this voice channel invite",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "target_user",
+        "type": "user object",
+        "description": "the user whose stream to display for this voice channel stream invite",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "target_application",
+        "type": "partial application object",
+        "description": "the embedded application to open for this voice channel embedded application invite",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "approximate_presence_count",
+        "type": "integer",
+        "description": "approximate count of online members, returned from the GET /invites/<code> endpoint when with_counts is true",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "approximate_member_count",
+        "type": "integer",
+        "description": "approximate count of total members, returned from the GET /invites/<code> endpoint when with_counts is true",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "expires_at",
+        "type": "ISO8601 timestamp",
+        "description": "the expiration date of this invite, returned from the GET /invites/<code> endpoint when with_expiration is true",
+        "optional": true,
+        "nullable": true
+    },
+    {
+        "name": "stage_instance",
+        "type": "invite stage instance object",
+        "description": "stage instance data if there is a public Stage instance in the Stage channel this invite is for (deprecated)",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "guild_scheduled_event",
+        "type": "guild scheduled event object",
+        "description": "guild scheduled event data, only included if guild_scheduled_event_id contains a valid guild scheduled event id",
+        "optional": true,
+        "nullable": false
+    }
+]

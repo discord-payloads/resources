@@ -1,0 +1,51 @@
+[
+    {
+        "name": "type",
+        "type": "integer",
+        "description": "2 for a button",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "style",
+        "type": "integer",
+        "description": "one of button styles",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "label",
+        "type": "string",
+        "description": "text that appears on the button, max 80 characters",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "emoji",
+        "type": "partial emoji",
+        "description": "name, id, and animated",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "custom_id",
+        "type": "string",
+        "description": "a developer-defined identifier for the button, max 100 characters",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "url",
+        "type": "string",
+        "description": "a url for link-style buttons",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "disabled",
+        "type": "boolean",
+        "description": "whether the button is disabled (default false)",
+        "optional": true,
+        "nullable": false
+    }
+]

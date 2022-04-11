@@ -1,0 +1,92 @@
+[
+    {
+        "name": "Create Webhook",
+        "method": "POST",
+        "url": "/channels/{channel.id}/webhooks",
+        "description": "Create a new webhook. Requires the MANAGE_WEBHOOKS permission. Returns a webhook object on success. Webhook names follow our naming restrictions that can be found in our Usernames and Nicknames documentation, with the following additional stipulations:"
+    },
+    {
+        "name": "Get Channel Webhooks",
+        "method": "GET",
+        "url": "/channels/{channel.id}/webhooks",
+        "description": "Returns a list of channel webhook objects. Requires the MANAGE_WEBHOOKS permission."
+    },
+    {
+        "name": "Get Guild Webhooks",
+        "method": "GET",
+        "url": "/guilds/{guild.id}/webhooks",
+        "description": "Returns a list of guild webhook objects. Requires the MANAGE_WEBHOOKS permission."
+    },
+    {
+        "name": "Get Webhook",
+        "method": "GET",
+        "url": "/webhooks/{webhook.id}",
+        "description": "Returns the new webhook object for the given id."
+    },
+    {
+        "name": "Get Webhook with Token",
+        "method": "GET",
+        "url": "/webhooks/{webhook.id}/{webhook.token}",
+        "description": "Same as above, except this call does not require authentication and returns no user in the webhook object."
+    },
+    {
+        "name": "Modify Webhook",
+        "method": "PATCH",
+        "url": "/webhooks/{webhook.id}",
+        "description": "Modify a webhook. Requires the MANAGE_WEBHOOKS permission. Returns the updated webhook object on success."
+    },
+    {
+        "name": "Modify Webhook with Token",
+        "method": "PATCH",
+        "url": "/webhooks/{webhook.id}/{webhook.token}",
+        "description": "Same as above, except this call does not require authentication, does not accept a channel_id parameter in the body, and does not return a user in the webhook object."
+    },
+    {
+        "name": "Delete Webhook",
+        "method": "DELETE",
+        "url": "/webhooks/{webhook.id}",
+        "description": "Delete a webhook permanently. Requires the MANAGE_WEBHOOKS permission. Returns a 204 No Content response on success."
+    },
+    {
+        "name": "Delete Webhook with Token",
+        "method": "DELETE",
+        "url": "/webhooks/{webhook.id}/{webhook.token}",
+        "description": "Same as above, except this call does not require authentication."
+    },
+    {
+        "name": "Execute Webhook",
+        "method": "POST",
+        "url": "/webhooks/{webhook.id}/{webhook.token}",
+        "description": "Refer to Uploading Files for details on attachments and multipart/form-data requests."
+    },
+    {
+        "name": "Execute Slack-Compatible Webhook",
+        "method": "POST",
+        "url": "/webhooks/{webhook.id}/{webhook.token}/slack",
+        "description": "Refer to Slack's documentation for more information. We do not support Slack's channel, icon_emoji, mrkdwn, or mrkdwn_in properties."
+    },
+    {
+        "name": "Execute GitHub-Compatible Webhook",
+        "method": "POST",
+        "url": "/webhooks/{webhook.id}/{webhook.token}/github",
+        "description": "Add a new webhook to your GitHub repo (in the repo's settings), and use this endpoint as the \"Payload URL.\" You can choose what events your Discord channel receives by choosing the \"Let me select individual events\" option and selecting individual events for the new webhook you're configuring."
+    },
+    {
+        "name": "Get Webhook Message",
+        "method": "GET",
+        "url": "/webhooks/{webhook.id}/{webhook.token}/messages/{message.id}",
+        "description": "Returns a previously-sent webhook message from the same token. Returns a message object on success."
+    },
+    {
+        "name": "Edit Webhook Message",
+        "method": "PATCH",
+        "url": "/webhooks/{webhook.id}/{webhook.token}/messages/{message.id}",
+        "description": "Edits a previously-sent webhook message from the same token. Returns a message object on success."
+    },
+    {
+        "name": "Delete Webhook Message",
+        "method": "DELETE",
+        "url": "/webhooks/{webhook.id}/{webhook.token}/messages/{message.id}",
+        "description": "Deletes a message that was created by the webhook. Returns a 204 No Content response on success."
+    }
+]

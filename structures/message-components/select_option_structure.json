@@ -1,0 +1,37 @@
+[
+    {
+        "name": "label",
+        "type": "string",
+        "description": "the user-facing name of the option, max 100 characters",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "value",
+        "type": "string",
+        "description": "the dev-defined value of the option, max 100 characters",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "description",
+        "type": "string",
+        "description": "an additional description of the option, max 100 characters",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "emoji",
+        "type": "partial emoji object",
+        "description": "id, name, and animated",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "default",
+        "type": "boolean",
+        "description": "will render this option as selected by default",
+        "optional": true,
+        "nullable": false
+    }
+]

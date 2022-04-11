@@ -1,0 +1,93 @@
+[
+    {
+        "name": "id",
+        "type": "snowflake",
+        "description": "id of the interaction",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "application_id",
+        "type": "snowflake",
+        "description": "id of the application this interaction is for",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "type",
+        "type": "interaction type",
+        "description": "the type of interaction",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "data",
+        "type": "interaction data",
+        "description": "the command data payload",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "guild_id",
+        "type": "snowflake",
+        "description": "the guild it was sent from",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "channel_id",
+        "type": "snowflake",
+        "description": "the channel it was sent from",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "member",
+        "type": "guild member object",
+        "description": "guild member data for the invoking user, including permissions",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "user",
+        "type": "user object",
+        "description": "user object for the invoking user, if invoked in a DM",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "token",
+        "type": "string",
+        "description": "a continuation token for responding to the interaction",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "version",
+        "type": "integer",
+        "description": "read-only property, always 1",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "message",
+        "type": "message object",
+        "description": "for components, the message they were attached to",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "locale",
+        "type": "string",
+        "description": "the selected language of the invoking user",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "guild_locale",
+        "type": "string",
+        "description": "the guild's preferred locale, if invoked in a guild",
+        "optional": true,
+        "nullable": false
+    }
+]

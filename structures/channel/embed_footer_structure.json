@@ -1,0 +1,23 @@
+[
+    {
+        "name": "text",
+        "type": "string",
+        "description": "footer text",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "icon_url",
+        "type": "string",
+        "description": "url of footer icon (only supports http(s) and attachments)",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "proxy_icon_url",
+        "type": "string",
+        "description": "a proxied url of footer icon",
+        "optional": true,
+        "nullable": false
+    }
+]

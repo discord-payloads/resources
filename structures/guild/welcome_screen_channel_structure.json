@@ -1,0 +1,30 @@
+[
+    {
+        "name": "channel_id",
+        "type": "snowflake",
+        "description": "the channel's id",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "description",
+        "type": "string",
+        "description": "the description shown for the channel",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "emoji_id",
+        "type": "snowflake",
+        "description": "the emoji id, if the emoji is custom",
+        "optional": false,
+        "nullable": true
+    },
+    {
+        "name": "emoji_name",
+        "type": "string",
+        "description": "the emoji name if custom, the unicode character if standard, or null if no emoji is set",
+        "optional": false,
+        "nullable": true
+    }
+]

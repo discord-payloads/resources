@@ -1,0 +1,30 @@
+[
+    {
+        "name": "id",
+        "type": "snowflake",
+        "description": "the id of the command",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "application_id",
+        "type": "snowflake",
+        "description": "the id of the application the command belongs to",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "guild_id",
+        "type": "snowflake",
+        "description": "the id of the guild",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "permissions",
+        "type": "array of application command permissions",
+        "description": "the permissions for the command in the guild",
+        "optional": false,
+        "nullable": false
+    }
+]

@@ -1,0 +1,23 @@
+[
+    {
+        "name": "name",
+        "type": "string",
+        "description": "name of the field",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "value",
+        "type": "string",
+        "description": "value of the field",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "inline",
+        "type": "boolean",
+        "description": "whether or not this field should display inline",
+        "optional": true,
+        "nullable": false
+    }
+]

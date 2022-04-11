@@ -1,0 +1,86 @@
+[
+    {
+        "name": "type",
+        "type": "one of application command option type",
+        "description": "the type of option",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "name",
+        "type": "string",
+        "description": "1-32 character name",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "name_localizations",
+        "type": "dictionary with keys in available locales",
+        "description": "Localization dictionary for the name field. Values follow the same restrictions as name",
+        "optional": true,
+        "nullable": true
+    },
+    {
+        "name": "description",
+        "type": "string",
+        "description": "1-100 character description",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "description_localizations",
+        "type": "dictionary with keys in available locales",
+        "description": "Localization dictionary for the description field. Values follow the same restrictions as description",
+        "optional": true,
+        "nullable": true
+    },
+    {
+        "name": "required",
+        "type": "boolean",
+        "description": "if the parameter is required or optional--default false",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "choices",
+        "type": "array of application command option choice",
+        "description": "choices for STRING, INTEGER, and NUMBER types for the user to pick from, max 25",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "options",
+        "type": "array of application command option",
+        "description": "if the option is a subcommand or subcommand group type, these nested options will be the parameters",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "channel_types",
+        "type": "array of channel types",
+        "description": "if the option is a channel type, the channels shown will be restricted to these types",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "min_value",
+        "type": "integer for INTEGER options, double for NUMBER options",
+        "description": "if the option is an INTEGER or NUMBER type, the minimum value permitted",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "max_value",
+        "type": "integer for INTEGER options, double for NUMBER options",
+        "description": "if the option is an INTEGER or NUMBER type, the maximum value permitted",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "autocomplete",
+        "type": "boolean",
+        "description": "if autocomplete interactions are enabled for this STRING, INTEGER, or NUMBER type option",
+        "optional": true,
+        "nullable": false
+    }
+]

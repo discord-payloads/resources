@@ -1,0 +1,16 @@
+[
+    {
+        "name": "enabled",
+        "type": "boolean",
+        "description": "whether the widget is enabled",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "channel_id",
+        "type": "snowflake",
+        "description": "the widget channel id",
+        "optional": false,
+        "nullable": true
+    }
+]

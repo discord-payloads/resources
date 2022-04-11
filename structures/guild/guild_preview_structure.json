@@ -1,0 +1,79 @@
+[
+    {
+        "name": "id",
+        "type": "snowflake",
+        "description": "guild id",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "name",
+        "type": "string",
+        "description": "guild name (2-100 characters)",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "icon",
+        "type": "string",
+        "description": "icon hash",
+        "optional": false,
+        "nullable": true
+    },
+    {
+        "name": "splash",
+        "type": "string",
+        "description": "splash hash",
+        "optional": false,
+        "nullable": true
+    },
+    {
+        "name": "discovery_splash",
+        "type": "string",
+        "description": "discovery splash hash",
+        "optional": false,
+        "nullable": true
+    },
+    {
+        "name": "emojis",
+        "type": "array of emoji objects",
+        "description": "custom guild emojis",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "features",
+        "type": "array of guild feature strings",
+        "description": "enabled guild features",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "approximate_member_count",
+        "type": "integer",
+        "description": "approximate number of members in this guild",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "approximate_presence_count",
+        "type": "integer",
+        "description": "approximate number of online members in this guild",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "description",
+        "type": "string",
+        "description": "the description for the guild",
+        "optional": false,
+        "nullable": true
+    },
+    {
+        "name": "stickers",
+        "type": "array of sticker objects",
+        "description": "custom guild stickers",
+        "optional": false,
+        "nullable": false
+    }
+]

@@ -1,0 +1,23 @@
+[
+    {
+        "name": "id",
+        "type": "snowflake",
+        "description": "the id of the role or user",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "type",
+        "type": "application command permission type",
+        "description": "role or user",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "permission",
+        "type": "boolean",
+        "description": "true to allow, false, to disallow",
+        "optional": false,
+        "nullable": false
+    }
+]

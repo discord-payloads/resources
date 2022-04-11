@@ -1,0 +1,16 @@
+[
+    {
+        "name": "description",
+        "type": "string",
+        "description": "the server description shown in the welcome screen",
+        "optional": false,
+        "nullable": true
+    },
+    {
+        "name": "welcome_channels",
+        "type": "array of welcome screen channel objects",
+        "description": "the channels shown in the welcome screen, up to 5",
+        "optional": false,
+        "nullable": false
+    }
+]

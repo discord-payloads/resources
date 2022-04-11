@@ -1,0 +1,44 @@
+[
+    {
+        "name": "audit_log_entries",
+        "type": "array of audit log entry objects",
+        "description": "list of audit log entries",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "guild_scheduled_events",
+        "type": "array of guild scheduled event objects",
+        "description": "list of guild scheduled events found in the audit log",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "integrations",
+        "type": "array of partial integration objects",
+        "description": "list of partial integration objects",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "threads",
+        "type": "array of channel objects",
+        "description": "list of threads found in the audit log*",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "users",
+        "type": "array of user objects",
+        "description": "list of users found in the audit log",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "webhooks",
+        "type": "array of webhook objects",
+        "description": "list of webhooks found in the audit log",
+        "optional": false,
+        "nullable": false
+    }
+]

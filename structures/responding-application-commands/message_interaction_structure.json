@@ -1,0 +1,37 @@
+[
+    {
+        "name": "id",
+        "type": "snowflake",
+        "description": "id of the interaction",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "type",
+        "type": "interaction type",
+        "description": "the type of interaction",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "name",
+        "type": "string",
+        "description": "the name of the application command",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "user",
+        "type": "user object",
+        "description": "the user who invoked the interaction",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "member",
+        "type": "partial member object",
+        "description": "the member who invoked the interaction in the guild",
+        "optional": true,
+        "nullable": false
+    }
+]

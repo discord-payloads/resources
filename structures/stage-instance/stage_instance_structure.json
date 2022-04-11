@@ -1,0 +1,51 @@
+[
+    {
+        "name": "id",
+        "type": "snowflake",
+        "description": "The id of this Stage instance",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "guild_id",
+        "type": "snowflake",
+        "description": "The guild id of the associated Stage channel",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "channel_id",
+        "type": "snowflake",
+        "description": "The id of the associated Stage channel",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "topic",
+        "type": "string",
+        "description": "The topic of the Stage instance (1-120 characters)",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "privacy_level",
+        "type": "integer",
+        "description": "The privacy level of the Stage instance",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "discoverable_disabled",
+        "type": "boolean",
+        "description": "Whether or not Stage Discovery is disabled (deprecated)",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "guild_scheduled_event_id",
+        "type": "snowflake",
+        "description": "The id of the scheduled event for this Stage instance",
+        "optional": false,
+        "nullable": true
+    }
+]

@@ -1,0 +1,79 @@
+[
+    {
+        "name": "code",
+        "type": "string",
+        "description": "the template code (unique ID)",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "name",
+        "type": "string",
+        "description": "template name",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "description",
+        "type": "string",
+        "description": "the description for the template",
+        "optional": false,
+        "nullable": true
+    },
+    {
+        "name": "usage_count",
+        "type": "integer",
+        "description": "number of times this template has been used",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "creator_id",
+        "type": "snowflake",
+        "description": "the ID of the user who created the template",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "creator",
+        "type": "user object",
+        "description": "the user who created the template",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "created_at",
+        "type": "ISO8601 timestamp",
+        "description": "when this template was created",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "updated_at",
+        "type": "ISO8601 timestamp",
+        "description": "when this template was last synced to the source guild",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "source_guild_id",
+        "type": "snowflake",
+        "description": "the ID of the guild this template is based on",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "serialized_source_guild",
+        "type": "partial guild object",
+        "description": "the guild snapshot this template contains",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "is_dirty",
+        "type": "boolean",
+        "description": "whether the template has unsynced changes",
+        "optional": false,
+        "nullable": true
+    }
+]

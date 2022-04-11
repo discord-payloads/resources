@@ -1,0 +1,72 @@
+[
+    {
+        "name": "id",
+        "type": "snowflake",
+        "description": "attachment id",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "filename",
+        "type": "string",
+        "description": "name of file attached",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "description",
+        "type": "string",
+        "description": "description for the file",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "content_type",
+        "type": "string",
+        "description": "the attachment's media type",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "size",
+        "type": "integer",
+        "description": "size of file in bytes",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "url",
+        "type": "string",
+        "description": "source url of file",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "proxy_url",
+        "type": "string",
+        "description": "a proxied url of file",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "height",
+        "type": "integer",
+        "description": "height of file (if image)",
+        "optional": true,
+        "nullable": true
+    },
+    {
+        "name": "width",
+        "type": "integer",
+        "description": "width of file (if image)",
+        "optional": true,
+        "nullable": true
+    },
+    {
+        "name": "ephemeral",
+        "type": "boolean",
+        "description": "whether this attachment is ephemeral",
+        "optional": true,
+        "nullable": false
+    }
+]

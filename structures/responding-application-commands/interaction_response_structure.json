@@ -1,0 +1,16 @@
+[
+    {
+        "name": "type",
+        "type": "interaction callback type",
+        "description": "the type of response",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "data",
+        "type": "interaction callback data",
+        "description": "an optional response message",
+        "optional": true,
+        "nullable": false
+    }
+]

@@ -1,0 +1,16 @@
+[
+    {
+        "name": "name",
+        "type": "string",
+        "description": "name of provider",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "url",
+        "type": "string",
+        "description": "url of provider",
+        "optional": true,
+        "nullable": false
+    }
+]

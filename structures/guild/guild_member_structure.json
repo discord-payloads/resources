@@ -1,0 +1,79 @@
+[
+    {
+        "name": "user",
+        "type": "user object",
+        "description": "the user this guild member represents",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "nick",
+        "type": "string",
+        "description": "this user's guild nickname",
+        "optional": true,
+        "nullable": true
+    },
+    {
+        "name": "avatar",
+        "type": "string",
+        "description": "the member's guild avatar hash",
+        "optional": true,
+        "nullable": true
+    },
+    {
+        "name": "roles",
+        "type": "array of snowflakes",
+        "description": "array of role object ids",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "joined_at",
+        "type": "ISO8601 timestamp",
+        "description": "when the user joined the guild",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "premium_since",
+        "type": "ISO8601 timestamp",
+        "description": "when the user started boosting the guild",
+        "optional": true,
+        "nullable": true
+    },
+    {
+        "name": "deaf",
+        "type": "boolean",
+        "description": "whether the user is deafened in voice channels",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "mute",
+        "type": "boolean",
+        "description": "whether the user is muted in voice channels",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "pending",
+        "type": "boolean",
+        "description": "whether the user has not yet passed the guild's Membership Screening requirements",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "permissions",
+        "type": "string",
+        "description": "total permissions of the member in the channel, including overwrites, returned when in the interaction object",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "communication_disabled_until",
+        "type": "ISO8601 timestamp",
+        "description": "when the user's timeout will expire and the user will be able to communicate in the guild again, null or a time in the past if the user is not timed out",
+        "optional": true,
+        "nullable": true
+    }
+]

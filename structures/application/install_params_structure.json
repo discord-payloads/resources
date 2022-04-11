@@ -1,0 +1,16 @@
+[
+    {
+        "name": "scopes",
+        "type": "array of strings",
+        "description": "the scopes to add the application to the server with",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "permissions",
+        "type": "string",
+        "description": "the permissions to request for the bot role",
+        "optional": false,
+        "nullable": false
+    }
+]

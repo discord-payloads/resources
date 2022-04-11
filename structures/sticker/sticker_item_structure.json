@@ -1,0 +1,23 @@
+[
+    {
+        "name": "id",
+        "type": "snowflake",
+        "description": "id of the sticker",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "name",
+        "type": "string",
+        "description": "name of the sticker",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "format_type",
+        "type": "integer",
+        "description": "type of sticker format",
+        "optional": false,
+        "nullable": false
+    }
+]

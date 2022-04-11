@@ -1,0 +1,30 @@
+[
+    {
+        "name": "url",
+        "type": "string",
+        "description": "source url of image (only supports http(s) and attachments)",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "proxy_url",
+        "type": "string",
+        "description": "a proxied url of the image",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "height",
+        "type": "integer",
+        "description": "height of image",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "width",
+        "type": "integer",
+        "description": "width of image",
+        "optional": true,
+        "nullable": false
+    }
+]

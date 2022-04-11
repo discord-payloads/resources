@@ -1,0 +1,30 @@
+[
+    {
+        "name": "name",
+        "type": "string",
+        "description": "name of author",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "url",
+        "type": "string",
+        "description": "url of author",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "icon_url",
+        "type": "string",
+        "description": "url of author icon (only supports http(s) and attachments)",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "proxy_icon_url",
+        "type": "string",
+        "description": "a proxied url of author icon",
+        "optional": true,
+        "nullable": false
+    }
+]

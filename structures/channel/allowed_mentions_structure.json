@@ -1,0 +1,30 @@
+[
+    {
+        "name": "parse",
+        "type": "array of allowed mention types",
+        "description": "An array of allowed mention types to parse from the content.",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "roles",
+        "type": "list of snowflakes",
+        "description": "Array of role_ids to mention (Max size of 100)",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "users",
+        "type": "list of snowflakes",
+        "description": "Array of user_ids to mention (Max size of 100)",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "replied_user",
+        "type": "boolean",
+        "description": "For replies, whether to mention the author of the message being replied to (default false)",
+        "optional": false,
+        "nullable": false
+    }
+]

@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Create Stage Instance",
+        "method": "POST",
+        "url": "/stage-instances",
+        "description": "Creates a new Stage instance associated to a Stage channel."
+    },
+    {
+        "name": "Get Stage Instance",
+        "method": "GET",
+        "url": "/stage-instances/{channel.id}",
+        "description": "Gets the stage instance associated with the Stage channel, if it exists."
+    },
+    {
+        "name": "Modify Stage Instance",
+        "method": "PATCH",
+        "url": "/stage-instances/{channel.id}",
+        "description": "Updates fields of an existing Stage instance."
+    },
+    {
+        "name": "Delete Stage Instance",
+        "method": "DELETE",
+        "url": "/stage-instances/{channel.id}",
+        "description": "Deletes the Stage instance."
+    }
+]

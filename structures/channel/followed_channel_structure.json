@@ -1,0 +1,16 @@
+[
+    {
+        "name": "channel_id",
+        "type": "snowflake",
+        "description": "source channel id",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "webhook_id",
+        "type": "snowflake",
+        "description": "created target webhook id",
+        "optional": false,
+        "nullable": false
+    }
+]

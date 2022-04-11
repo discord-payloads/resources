@@ -1,0 +1,37 @@
+[
+    {
+        "name": "name",
+        "type": "string",
+        "description": "the name of the parameter",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "type",
+        "type": "integer",
+        "description": "value of application command option type",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "value",
+        "type": "string, integer, or double",
+        "description": "the value of the option resulting from user input",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "options",
+        "type": "array of application command interaction data option",
+        "description": "present if this option is a group or subcommand",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "focused",
+        "type": "boolean",
+        "description": "true if this option is the currently focused option for autocomplete",
+        "optional": true,
+        "nullable": false
+    }
+]

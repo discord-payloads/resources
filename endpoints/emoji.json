@@ -1,0 +1,32 @@
+[
+    {
+        "name": "List Guild Emojis",
+        "method": "GET",
+        "url": "/guilds/{guild.id}/emojis",
+        "description": "Returns a list of emoji objects for the given guild."
+    },
+    {
+        "name": "Get Guild Emoji",
+        "method": "GET",
+        "url": "/guilds/{guild.id}/emojis/{emoji.id}",
+        "description": "Returns an emoji object for the given guild and emoji IDs."
+    },
+    {
+        "name": "Create Guild Emoji",
+        "method": "POST",
+        "url": "/guilds/{guild.id}/emojis",
+        "description": "Create a new emoji for the guild. Requires the MANAGE_EMOJIS_AND_STICKERS permission. Returns the new emoji object on success. Fires a Guild Emojis Update Gateway event."
+    },
+    {
+        "name": "Modify Guild Emoji",
+        "method": "PATCH",
+        "url": "/guilds/{guild.id}/emojis/{emoji.id}",
+        "description": "Modify the given emoji. Requires the MANAGE_EMOJIS_AND_STICKERS permission. Returns the updated emoji object on success. Fires a Guild Emojis Update Gateway event."
+    },
+    {
+        "name": "Delete Guild Emoji",
+        "method": "DELETE",
+        "url": "/guilds/{guild.id}/emojis/{emoji.id}",
+        "description": "Delete the given emoji. Requires the MANAGE_EMOJIS_AND_STICKERS permission. Returns 204 No Content on success. Fires a Guild Emojis Update Gateway event."
+    }
+]

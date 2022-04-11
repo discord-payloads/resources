@@ -1,0 +1,56 @@
+[
+    {
+        "name": "Get Current User",
+        "method": "GET",
+        "url": "/users/@me",
+        "description": "Returns the user object of the requester's account. For OAuth2, this requires the identify scope, which will return the object without an email, and optionally the email scope, which returns the object with an email."
+    },
+    {
+        "name": "Get User",
+        "method": "GET",
+        "url": "/users/{user.id}",
+        "description": "Returns a user object for a given user ID."
+    },
+    {
+        "name": "Modify Current User",
+        "method": "PATCH",
+        "url": "/users/@me",
+        "description": "Modify the requester's user account settings. Returns a user object on success."
+    },
+    {
+        "name": "Get Current User Guilds",
+        "method": "GET",
+        "url": "/users/@me/guilds",
+        "description": "Returns a list of partial guild objects the current user is a member of. Requires the guilds OAuth2 scope."
+    },
+    {
+        "name": "Get Current User Guild Member",
+        "method": "GET",
+        "url": "/users/@me/guilds/{guild.id}/member",
+        "description": "Returns a guild member object for the current user. Requires the guilds.members.read OAuth2 scope."
+    },
+    {
+        "name": "Leave Guild",
+        "method": "DELETE",
+        "url": "/users/@me/guilds/{guild.id}",
+        "description": "Leave a guild. Returns a 204 empty response on success."
+    },
+    {
+        "name": "Create DM",
+        "method": "POST",
+        "url": "/users/@me/channels",
+        "description": "Create a new DM channel with a user. Returns a DM channel object."
+    },
+    {
+        "name": "Create Group DM",
+        "method": "POST",
+        "url": "/users/@me/channels",
+        "description": "Create a new group DM channel with multiple users. Returns a DM channel object. This endpoint was intended to be used with the now-deprecated GameBridge SDK. DMs created with this endpoint will not be shown in the Discord client"
+    },
+    {
+        "name": "Get User Connections",
+        "method": "GET",
+        "url": "/users/@me/connections",
+        "description": "Returns a list of connection objects. Requires the connections OAuth2 scope."
+    }
+]

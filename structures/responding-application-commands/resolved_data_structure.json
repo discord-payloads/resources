@@ -1,0 +1,44 @@
+[
+    {
+        "name": "users",
+        "type": "Map of Snowflakes to user objects",
+        "description": "the ids and User objects",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "members",
+        "type": "Map of Snowflakes to partial member objects",
+        "description": "the ids and partial Member objects",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "roles",
+        "type": "Map of Snowflakes to role objects",
+        "description": "the ids and Role objects",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "channels",
+        "type": "Map of Snowflakes to partial channel objects",
+        "description": "the ids and partial Channel objects",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "messages",
+        "type": "Map of Snowflakes to partial messages objects",
+        "description": "the ids and partial Message objects",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "attachments",
+        "type": "Map of Snowflakes to attachment objects",
+        "description": "the ids and attachment objects",
+        "optional": true,
+        "nullable": false
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "name": "members",
+        "type": "array of partial guild member objects",
+        "description": "the members speaking in the Stage",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "participant_count",
+        "type": "integer",
+        "description": "the number of users in the Stage",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "speaker_count",
+        "type": "integer",
+        "description": "the number of users speaking in the Stage",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "topic",
+        "type": "string",
+        "description": "the topic of the Stage instance (1-120 characters)",
+        "optional": false,
+        "nullable": false
+    }
+]

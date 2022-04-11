@@ -1,0 +1,37 @@
+[
+    {
+        "name": "id",
+        "type": "string",
+        "description": "unique ID for the region",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "name",
+        "type": "string",
+        "description": "name of the region",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "optimal",
+        "type": "boolean",
+        "description": "true for a single server that is closest to the current user's client",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "deprecated",
+        "type": "boolean",
+        "description": "whether this is a deprecated voice region (avoid switching to these)",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "custom",
+        "type": "boolean",
+        "description": "whether this is a custom voice region (used for events/etc)",
+        "optional": false,
+        "nullable": false
+    }
+]

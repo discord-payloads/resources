@@ -1,0 +1,107 @@
+[
+    {
+        "name": "id",
+        "type": "snowflake",
+        "description": "the user's id",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "username",
+        "type": "string",
+        "description": "the user's username, not unique across the platform",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "discriminator",
+        "type": "string",
+        "description": "the user's 4-digit discord-tag",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "avatar",
+        "type": "string",
+        "description": "the user's avatar hash",
+        "optional": false,
+        "nullable": true
+    },
+    {
+        "name": "bot",
+        "type": "boolean",
+        "description": "whether the user belongs to an OAuth2 application",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "system",
+        "type": "boolean",
+        "description": "whether the user is an Official Discord System user (part of the urgent message system)",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "mfa_enabled",
+        "type": "boolean",
+        "description": "whether the user has two factor enabled on their account",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "banner",
+        "type": "string",
+        "description": "the user's banner hash",
+        "optional": true,
+        "nullable": true
+    },
+    {
+        "name": "accent_color",
+        "type": "integer",
+        "description": "the user's banner color encoded as an integer representation of hexadecimal color code",
+        "optional": true,
+        "nullable": true
+    },
+    {
+        "name": "locale",
+        "type": "string",
+        "description": "the user's chosen language option",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "verified",
+        "type": "boolean",
+        "description": "whether the email on this account has been verified",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "email",
+        "type": "string",
+        "description": "the user's email",
+        "optional": true,
+        "nullable": true
+    },
+    {
+        "name": "flags",
+        "type": "integer",
+        "description": "the flags on a user's account",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "premium_type",
+        "type": "integer",
+        "description": "the type of Nitro subscription on a user's account",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "public_flags",
+        "type": "integer",
+        "description": "the public flags on a user's account",
+        "optional": true,
+        "nullable": false
+    }
+]

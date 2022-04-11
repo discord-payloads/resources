@@ -1,0 +1,260 @@
+[
+    {
+        "name": "Create Guild",
+        "method": "POST",
+        "url": "/guilds",
+        "description": "Create a new guild. Returns a guild object on success. Fires a Guild Create Gateway event."
+    },
+    {
+        "name": "Get Guild",
+        "method": "GET",
+        "url": "/guilds/{guild.id}",
+        "description": "Returns the guild object for the given id. If with_counts is set to true, this endpoint will also return approximate_member_count and approximate_presence_count for the guild."
+    },
+    {
+        "name": "Get Guild Preview",
+        "method": "GET",
+        "url": "/guilds/{guild.id}/preview",
+        "description": "Returns the guild preview object for the given id. If the user is not in the guild, then the guild must be lurkable."
+    },
+    {
+        "name": "Modify Guild",
+        "method": "PATCH",
+        "url": "/guilds/{guild.id}",
+        "description": "Modify a guild's settings. Requires the MANAGE_GUILD permission. Returns the updated guild object on success. Fires a Guild Update Gateway event."
+    },
+    {
+        "name": "Delete Guild",
+        "method": "DELETE",
+        "url": "/guilds/{guild.id}",
+        "description": "Delete a guild permanently. User must be owner. Returns 204 No Content on success. Fires a Guild Delete Gateway event."
+    },
+    {
+        "name": "Get Guild Channels",
+        "method": "GET",
+        "url": "/guilds/{guild.id}/channels",
+        "description": "Returns a list of guild channel objects. Does not include threads."
+    },
+    {
+        "name": "Create Guild Channel",
+        "method": "POST",
+        "url": "/guilds/{guild.id}/channels",
+        "description": "Create a new channel object for the guild. Requires the MANAGE_CHANNELS permission. If setting permission overwrites, only permissions your bot has in the guild can be allowed/denied. Setting MANAGE_ROLES permission in channels is only possible for guild administrators. Returns the new channel object on success. Fires a Channel Create Gateway event."
+    },
+    {
+        "name": "Modify Guild Channel Positions",
+        "method": "PATCH",
+        "url": "/guilds/{guild.id}/channels",
+        "description": "Modify the positions of a set of channel objects for the guild. Requires MANAGE_CHANNELS permission. Returns a 204 empty response on success. Fires multiple Channel Update Gateway events."
+    },
+    {
+        "name": "List Active Threads",
+        "method": "GET",
+        "url": "/guilds/{guild.id}/threads/active",
+        "description": "Returns all active threads in the guild, including public and private threads. Threads are ordered by their id, in descending order."
+    },
+    {
+        "name": "Get Guild Member",
+        "method": "GET",
+        "url": "/guilds/{guild.id}/members/{user.id}",
+        "description": "Returns a guild member object for the specified user."
+    },
+    {
+        "name": "List Guild Members",
+        "method": "GET",
+        "url": "/guilds/{guild.id}/members",
+        "description": "Returns a list of guild member objects that are members of the guild."
+    },
+    {
+        "name": "Search Guild Members",
+        "method": "GET",
+        "url": "/guilds/{guild.id}/members/search",
+        "description": "Returns a list of guild member objects whose username or nickname starts with a provided string."
+    },
+    {
+        "name": "Add Guild Member",
+        "method": "PUT",
+        "url": "/guilds/{guild.id}/members/{user.id}",
+        "description": "Adds a user to the guild, provided you have a valid oauth2 access token for the user with the guilds.join scope. Returns a 201 Created with the guild member as the body, or 204 No Content if the user is already a member of the guild. Fires a Guild Member Add Gateway event."
+    },
+    {
+        "name": "Modify Guild Member",
+        "method": "PATCH",
+        "url": "/guilds/{guild.id}/members/{user.id}",
+        "description": "Modify attributes of a guild member. Returns a 200 OK with the guild member as the body. Fires a Guild Member Update Gateway event. If the channel_id is set to null, this will force the target user to be disconnected from voice."
+    },
+    {
+        "name": "Modify Current Member",
+        "method": "PATCH",
+        "url": "/guilds/{guild.id}/members/@me",
+        "description": "Modifies the current member in a guild. Returns a 200 with the updated member object on success. Fires a Guild Member Update Gateway event."
+    },
+    {
+        "name": "Modify Current User Nick",
+        "method": "PATCH",
+        "url": "/guilds/{guild.id}/members/@me/nick",
+        "description": "Modifies the nickname of the current user in a guild. Returns a 200 with the nickname on success. Fires a Guild Member Update Gateway event."
+    },
+    {
+        "name": "Add Guild Member Role",
+        "method": "PUT",
+        "url": "/guilds/{guild.id}/members/{user.id}/roles/{role.id}",
+        "description": "Adds a role to a guild member. Requires the MANAGE_ROLES permission. Returns a 204 empty response on success. Fires a Guild Member Update Gateway event."
+    },
+    {
+        "name": "Remove Guild Member Role",
+        "method": "DELETE",
+        "url": "/guilds/{guild.id}/members/{user.id}/roles/{role.id}",
+        "description": "Removes a role from a guild member. Requires the MANAGE_ROLES permission. Returns a 204 empty response on success. Fires a Guild Member Update Gateway event."
+    },
+    {
+        "name": "Remove Guild Member",
+        "method": "DELETE",
+        "url": "/guilds/{guild.id}/members/{user.id}",
+        "description": "Remove a member from a guild. Requires KICK_MEMBERS permission. Returns a 204 empty response on success. Fires a Guild Member Remove Gateway event."
+    },
+    {
+        "name": "Get Guild Bans",
+        "method": "GET",
+        "url": "/guilds/{guild.id}/bans",
+        "description": "Returns a list of ban objects for the users banned from this guild. Requires the BAN_MEMBERS permission."
+    },
+    {
+        "name": "Get Guild Ban",
+        "method": "GET",
+        "url": "/guilds/{guild.id}/bans/{user.id}",
+        "description": "Returns a ban object for the given user or a 404 not found if the ban cannot be found. Requires the BAN_MEMBERS permission."
+    },
+    {
+        "name": "Create Guild Ban",
+        "method": "PUT",
+        "url": "/guilds/{guild.id}/bans/{user.id}",
+        "description": "Create a guild ban, and optionally delete previous messages sent by the banned user. Requires the BAN_MEMBERS permission. Returns a 204 empty response on success. Fires a Guild Ban Add Gateway event."
+    },
+    {
+        "name": "Remove Guild Ban",
+        "method": "DELETE",
+        "url": "/guilds/{guild.id}/bans/{user.id}",
+        "description": "Remove the ban for a user. Requires the BAN_MEMBERS permissions. Returns a 204 empty response on success. Fires a Guild Ban Remove Gateway event."
+    },
+    {
+        "name": "Get Guild Roles",
+        "method": "GET",
+        "url": "/guilds/{guild.id}/roles",
+        "description": "Returns a list of role objects for the guild."
+    },
+    {
+        "name": "Create Guild Role",
+        "method": "POST",
+        "url": "/guilds/{guild.id}/roles",
+        "description": "Create a new role for the guild. Requires the MANAGE_ROLES permission. Returns the new role object on success. Fires a Guild Role Create Gateway event. All JSON params are optional."
+    },
+    {
+        "name": "Modify Guild Role Positions",
+        "method": "PATCH",
+        "url": "/guilds/{guild.id}/roles",
+        "description": "Modify the positions of a set of role objects for the guild. Requires the MANAGE_ROLES permission. Returns a list of all of the guild's role objects on success. Fires multiple Guild Role Update Gateway events."
+    },
+    {
+        "name": "Modify Guild Role",
+        "method": "PATCH",
+        "url": "/guilds/{guild.id}/roles/{role.id}",
+        "description": "Modify a guild role. Requires the MANAGE_ROLES permission. Returns the updated role on success. Fires a Guild Role Update Gateway event."
+    },
+    {
+        "name": "Delete Guild Role",
+        "method": "DELETE",
+        "url": "/guilds/{guild.id}/roles/{role.id}",
+        "description": "Delete a guild role. Requires the MANAGE_ROLES permission. Returns a 204 empty response on success. Fires a Guild Role Delete Gateway event."
+    },
+    {
+        "name": "Get Guild Prune Count",
+        "method": "GET",
+        "url": "/guilds/{guild.id}/prune",
+        "description": "Returns an object with one 'pruned' key indicating the number of members that would be removed in a prune operation. Requires the KICK_MEMBERS permission."
+    },
+    {
+        "name": "Begin Guild Prune",
+        "method": "POST",
+        "url": "/guilds/{guild.id}/prune",
+        "description": "Begin a prune operation. Requires the KICK_MEMBERS permission. Returns an object with one 'pruned' key indicating the number of members that were removed in the prune operation. For large guilds it's recommended to set the compute_prune_count option to false, forcing 'pruned' to null. Fires multiple Guild Member Remove Gateway events."
+    },
+    {
+        "name": "Get Guild Voice Regions",
+        "method": "GET",
+        "url": "/guilds/{guild.id}/regions",
+        "description": "Returns a list of voice region objects for the guild. Unlike the similar /voice route, this returns VIP servers when the guild is VIP-enabled."
+    },
+    {
+        "name": "Get Guild Invites",
+        "method": "GET",
+        "url": "/guilds/{guild.id}/invites",
+        "description": "Returns a list of invite objects (with invite metadata) for the guild. Requires the MANAGE_GUILD permission."
+    },
+    {
+        "name": "Get Guild Integrations",
+        "method": "GET",
+        "url": "/guilds/{guild.id}/integrations",
+        "description": "Returns a list of integration objects for the guild. Requires the MANAGE_GUILD permission."
+    },
+    {
+        "name": "Delete Guild Integration",
+        "method": "DELETE",
+        "url": "/guilds/{guild.id}/integrations/{integration.id}",
+        "description": "Delete the attached integration object for the guild. Deletes any associated webhooks and kicks the associated bot if there is one. Requires the MANAGE_GUILD permission. Returns a 204 empty response on success. Fires a Guild Integrations Update Gateway event."
+    },
+    {
+        "name": "Get Guild Widget Settings",
+        "method": "GET",
+        "url": "/guilds/{guild.id}/widget",
+        "description": "Returns a guild widget object. Requires the MANAGE_GUILD permission."
+    },
+    {
+        "name": "Modify Guild Widget",
+        "method": "PATCH",
+        "url": "/guilds/{guild.id}/widget",
+        "description": "Modify a guild widget object for the guild. All attributes may be passed in with JSON and modified. Requires the MANAGE_GUILD permission. Returns the updated guild widget object."
+    },
+    {
+        "name": "Get Guild Widget",
+        "method": "GET",
+        "url": "/guilds/{guild.id}/widget.json",
+        "description": "Returns the widget for the guild."
+    },
+    {
+        "name": "Get Guild Vanity URL",
+        "method": "GET",
+        "url": "/guilds/{guild.id}/vanity-url",
+        "description": "Returns a partial invite object for guilds with that feature enabled. Requires the MANAGE_GUILD permission. code will be null if a vanity url for the guild is not set."
+    },
+    {
+        "name": "Get Guild Widget Image",
+        "method": "GET",
+        "url": "/guilds/{guild.id}/widget.png",
+        "description": "Returns a PNG image widget for the guild. Requires no permissions or authentication."
+    },
+    {
+        "name": "Get Guild Welcome Screen",
+        "method": "GET",
+        "url": "/guilds/{guild.id}/welcome-screen",
+        "description": "Returns the Welcome Screen object for the guild."
+    },
+    {
+        "name": "Modify Guild Welcome Screen",
+        "method": "PATCH",
+        "url": "/guilds/{guild.id}/welcome-screen",
+        "description": "Modify the guild's Welcome Screen. Requires the MANAGE_GUILD permission. Returns the updated Welcome Screen object."
+    },
+    {
+        "name": "Modify Current User Voice State",
+        "method": "PATCH",
+        "url": "/guilds/{guild.id}/voice-states/@me",
+        "description": "Updates the current user's voice state."
+    },
+    {
+        "name": "Modify User Voice State",
+        "method": "PATCH",
+        "url": "/guilds/{guild.id}/voice-states/{user.id}",
+        "description": "Updates another user's voice state."
+    }
+]

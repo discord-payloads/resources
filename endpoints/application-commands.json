@@ -1,0 +1,98 @@
+[
+    {
+        "name": "Get Global Application Commands",
+        "method": "GET",
+        "url": "/applications/{application.id}/commands",
+        "description": "Fetch all of the global commands for your application. Returns an array of application command objects."
+    },
+    {
+        "name": "Create Global Application Command",
+        "method": "POST",
+        "url": "/applications/{application.id}/commands",
+        "description": "Create a new global command. New global commands will be available in all guilds after 1 hour. Returns 201 and an application command object."
+    },
+    {
+        "name": "Get Global Application Command",
+        "method": "GET",
+        "url": "/applications/{application.id}/commands/{command.id}",
+        "description": "Fetch a global command for your application. Returns an application command object."
+    },
+    {
+        "name": "Edit Global Application Command",
+        "method": "PATCH",
+        "url": "/applications/{application.id}/commands/{command.id}",
+        "description": "Edit a global command. Updates will be available in all guilds after 1 hour. Returns 200 and an application command object."
+    },
+    {
+        "name": "Delete Global Application Command",
+        "method": "DELETE",
+        "url": "/applications/{application.id}/commands/{command.id}",
+        "description": "Deletes a global command. Returns 204 No Content on success."
+    },
+    {
+        "name": "Bulk Overwrite Global Application Commands",
+        "method": "PUT",
+        "url": "/applications/{application.id}/commands",
+        "description": "Takes a list of application commands, overwriting the existing global command list for this application. Updates will be available in all guilds after 1 hour. Returns 200 and a list of application command objects. Commands that do not already exist will count toward daily application command create limits."
+    },
+    {
+        "name": "Get Guild Application Commands",
+        "method": "GET",
+        "url": "/applications/{application.id}/guilds/{guild.id}/commands",
+        "description": "Fetch all of the guild commands for your application for a specific guild. Returns an array of application command objects."
+    },
+    {
+        "name": "Create Guild Application Command",
+        "method": "POST",
+        "url": "/applications/{application.id}/guilds/{guild.id}/commands",
+        "description": "Create a new guild command. New guild commands will be available in the guild immediately. Returns 201 and an application command object. If the command did not already exist, it will count toward daily application command create limits."
+    },
+    {
+        "name": "Get Guild Application Command",
+        "method": "GET",
+        "url": "/applications/{application.id}/guilds/{guild.id}/commands/{command.id}",
+        "description": "Fetch a guild command for your application. Returns an application command object."
+    },
+    {
+        "name": "Edit Guild Application Command",
+        "method": "PATCH",
+        "url": "/applications/{application.id}/guilds/{guild.id}/commands/{command.id}",
+        "description": "Edit a guild command. Updates for guild commands will be available immediately. Returns 200 and an application command object."
+    },
+    {
+        "name": "Delete Guild Application Command",
+        "method": "DELETE",
+        "url": "/applications/{application.id}/guilds/{guild.id}/commands/{command.id}",
+        "description": "Delete a guild command. Returns 204 No Content on success."
+    },
+    {
+        "name": "Bulk Overwrite Guild Application Commands",
+        "method": "PUT",
+        "url": "/applications/{application.id}/guilds/{guild.id}/commands",
+        "description": "Takes a list of application commands, overwriting the existing command list for this application for the targeted guild. Returns 200 and a list of application command objects."
+    },
+    {
+        "name": "Get Guild Application Command Permissions",
+        "method": "GET",
+        "url": "/applications/{application.id}/guilds/{guild.id}/commands/permissions",
+        "description": "Fetches command permissions for all commands for your application in a guild. Returns an array of guild application command permissions objects."
+    },
+    {
+        "name": "Get Application Command Permissions",
+        "method": "GET",
+        "url": "/applications/{application.id}/guilds/{guild.id}/commands/{command.id}/permissions",
+        "description": "Fetches command permissions for a specific command for your application in a guild. Returns a guild application command permissions object."
+    },
+    {
+        "name": "Edit Application Command Permissions",
+        "method": "PUT",
+        "url": "/applications/{application.id}/guilds/{guild.id}/commands/{command.id}/permissions",
+        "description": "Edits command permissions for a specific command for your application in a guild.\nYou can only add up to 10 permission overwrites for a command.\nReturns a GuildApplicationCommandPermissions object."
+    },
+    {
+        "name": "Batch Edit Application Command Permissions",
+        "method": "PUT",
+        "url": "/applications/{application.id}/guilds/{guild.id}/commands/permissions",
+        "description": "Batch edits permissions for all commands in a guild. Takes an array of partial guild application command permissions objects including id and permissions."
+    }
+]

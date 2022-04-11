@@ -1,0 +1,44 @@
+[
+    {
+        "name": "Get Sticker",
+        "method": "GET",
+        "url": "/stickers/{sticker.id}",
+        "description": "Returns a sticker object for the given sticker ID."
+    },
+    {
+        "name": "List Nitro Sticker Packs",
+        "method": "GET",
+        "url": "/sticker-packs",
+        "description": "Returns the list of sticker packs available to Nitro subscribers."
+    },
+    {
+        "name": "List Guild Stickers",
+        "method": "GET",
+        "url": "/guilds/{guild.id}/stickers",
+        "description": "Returns an array of sticker objects for the given guild. Includes user fields if the bot has the MANAGE_EMOJIS_AND_STICKERS permission."
+    },
+    {
+        "name": "Get Guild Sticker",
+        "method": "GET",
+        "url": "/guilds/{guild.id}/stickers/{sticker.id}",
+        "description": "Returns a sticker object for the given guild and sticker IDs. Includes the user field if the bot has the MANAGE_EMOJIS_AND_STICKERS permission."
+    },
+    {
+        "name": "Create Guild Sticker",
+        "method": "POST",
+        "url": "/guilds/{guild.id}/stickers",
+        "description": "Create a new sticker for the guild. Send a multipart/form-data body. Requires the MANAGE_EMOJIS_AND_STICKERS permission. Returns the new sticker object on success."
+    },
+    {
+        "name": "Modify Guild Sticker",
+        "method": "PATCH",
+        "url": "/guilds/{guild.id}/stickers/{sticker.id}",
+        "description": "Modify the given sticker. Requires the MANAGE_EMOJIS_AND_STICKERS permission. Returns the updated sticker object on success."
+    },
+    {
+        "name": "Delete Guild Sticker",
+        "method": "DELETE",
+        "url": "/guilds/{guild.id}/stickers/{sticker.id}",
+        "description": "Delete the given sticker. Requires the MANAGE_EMOJIS_AND_STICKERS permission. Returns 204 No Content on success."
+    }
+]

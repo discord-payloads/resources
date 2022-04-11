@@ -1,0 +1,30 @@
+[
+    {
+        "name": "url",
+        "type": "string",
+        "description": "source url of video",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "proxy_url",
+        "type": "string",
+        "description": "a proxied url of the video",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "height",
+        "type": "integer",
+        "description": "height of video",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "width",
+        "type": "integer",
+        "description": "width of video",
+        "optional": true,
+        "nullable": false
+    }
+]

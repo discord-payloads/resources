@@ -1,0 +1,23 @@
+[
+    {
+        "name": "bot_id",
+        "type": "snowflake",
+        "description": "the id of the bot this role belongs to",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "integration_id",
+        "type": "snowflake",
+        "description": "the id of the integration this role belongs to",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "premium_subscriber",
+        "type": "null",
+        "description": "whether this is the guild's premium subscriber role",
+        "optional": true,
+        "nullable": false
+    }
+]

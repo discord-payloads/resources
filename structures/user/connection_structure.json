@@ -1,0 +1,65 @@
+[
+    {
+        "name": "id",
+        "type": "string",
+        "description": "id of the connection account",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "name",
+        "type": "string",
+        "description": "the username of the connection account",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "type",
+        "type": "string",
+        "description": "the service of the connection (twitch, youtube)",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "revoked",
+        "type": "boolean",
+        "description": "whether the connection is revoked",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "integrations",
+        "type": "array",
+        "description": "an array of partial server integrations",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "verified",
+        "type": "boolean",
+        "description": "whether the connection is verified",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "friend_sync",
+        "type": "boolean",
+        "description": "whether friend sync is enabled for this connection",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "show_activity",
+        "type": "boolean",
+        "description": "whether activities related to this connection will be shown in presence updates",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "visibility",
+        "type": "integer",
+        "description": "visibility of this connection",
+        "optional": false,
+        "nullable": false
+    }
+]

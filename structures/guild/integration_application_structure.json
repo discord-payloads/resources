@@ -1,0 +1,37 @@
+[
+    {
+        "name": "id",
+        "type": "snowflake",
+        "description": "the id of the app",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "name",
+        "type": "string",
+        "description": "the name of the app",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "icon",
+        "type": "string",
+        "description": "the icon hash of the app",
+        "optional": false,
+        "nullable": true
+    },
+    {
+        "name": "description",
+        "type": "string",
+        "description": "the description of the app",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "bot",
+        "type": "user object",
+        "description": "the bot associated with this application",
+        "optional": true,
+        "nullable": false
+    }
+]

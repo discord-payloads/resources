@@ -1,0 +1,30 @@
+[
+    {
+        "name": "message_id",
+        "type": "snowflake",
+        "description": "id of the originating message",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "channel_id",
+        "type": "snowflake",
+        "description": "id of the originating message's channel",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "guild_id",
+        "type": "snowflake",
+        "description": "id of the originating message's guild",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "fail_if_not_exists",
+        "type": "boolean",
+        "description": "when sending, whether to error if the referenced message doesn't exist instead of sending as a normal (non-reply) message, default true",
+        "optional": true,
+        "nullable": false
+    }
+]

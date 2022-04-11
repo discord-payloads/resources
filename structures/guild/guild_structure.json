@@ -1,0 +1,366 @@
+[
+    {
+        "name": "id",
+        "type": "snowflake",
+        "description": "guild id",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "name",
+        "type": "string",
+        "description": "guild name (2-100 characters, excluding trailing and leading whitespace)",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "icon",
+        "type": "string",
+        "description": "icon hash",
+        "optional": false,
+        "nullable": true
+    },
+    {
+        "name": "icon_hash",
+        "type": "string",
+        "description": "icon hash, returned when in the template object",
+        "optional": true,
+        "nullable": true
+    },
+    {
+        "name": "splash",
+        "type": "string",
+        "description": "splash hash",
+        "optional": false,
+        "nullable": true
+    },
+    {
+        "name": "discovery_splash",
+        "type": "string",
+        "description": "discovery splash hash; only present for guilds with the \"DISCOVERABLE\" feature",
+        "optional": false,
+        "nullable": true
+    },
+    {
+        "name": "owner",
+        "type": "boolean",
+        "description": "true if the user is the owner of the guild",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "owner_id",
+        "type": "snowflake",
+        "description": "id of owner",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "permissions",
+        "type": "string",
+        "description": "total permissions for the user in the guild (excludes overwrites)",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "region",
+        "type": "string",
+        "description": "voice region id for the guild (deprecated)",
+        "optional": true,
+        "nullable": true
+    },
+    {
+        "name": "afk_channel_id",
+        "type": "snowflake",
+        "description": "id of afk channel",
+        "optional": false,
+        "nullable": true
+    },
+    {
+        "name": "afk_timeout",
+        "type": "integer",
+        "description": "afk timeout in seconds",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "widget_enabled",
+        "type": "boolean",
+        "description": "true if the server widget is enabled",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "widget_channel_id",
+        "type": "snowflake",
+        "description": "the channel id that the widget will generate an invite to, or null if set to no invite",
+        "optional": true,
+        "nullable": true
+    },
+    {
+        "name": "verification_level",
+        "type": "integer",
+        "description": "verification level required for the guild",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "default_message_notifications",
+        "type": "integer",
+        "description": "default message notifications level",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "explicit_content_filter",
+        "type": "integer",
+        "description": "explicit content filter level",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "roles",
+        "type": "array of role objects",
+        "description": "roles in the guild",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "emojis",
+        "type": "array of emoji objects",
+        "description": "custom guild emojis",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "features",
+        "type": "array of guild feature strings",
+        "description": "enabled guild features",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "mfa_level",
+        "type": "integer",
+        "description": "required MFA level for the guild",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "application_id",
+        "type": "snowflake",
+        "description": "application id of the guild creator if it is bot-created",
+        "optional": false,
+        "nullable": true
+    },
+    {
+        "name": "system_channel_id",
+        "type": "snowflake",
+        "description": "the id of the channel where guild notices such as welcome messages and boost events are posted",
+        "optional": false,
+        "nullable": true
+    },
+    {
+        "name": "system_channel_flags",
+        "type": "integer",
+        "description": "system channel flags",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "rules_channel_id",
+        "type": "snowflake",
+        "description": "the id of the channel where Community guilds can display rules and/or guidelines",
+        "optional": false,
+        "nullable": true
+    },
+    {
+        "name": "joined_at",
+        "type": "ISO8601 timestamp",
+        "description": "when this guild was joined at",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "large",
+        "type": "boolean",
+        "description": "true if this is considered a large guild",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "unavailable",
+        "type": "boolean",
+        "description": "true if this guild is unavailable due to an outage",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "member_count",
+        "type": "integer",
+        "description": "total number of members in this guild",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "voice_states",
+        "type": "array of partial voice state objects",
+        "description": "states of members currently in voice channels; lacks the guild_id key",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "members",
+        "type": "array of guild member objects",
+        "description": "users in the guild",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "channels",
+        "type": "array of channel objects",
+        "description": "channels in the guild",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "threads",
+        "type": "array of channel objects",
+        "description": "all active threads in the guild that current user has permission to view",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "presences",
+        "type": "array of partial presence update objects",
+        "description": "presences of the members in the guild, will only include non-offline members if the size is greater than large threshold",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "max_presences",
+        "type": "integer",
+        "description": "the maximum number of presences for the guild (null is always returned, apart from the largest of guilds)",
+        "optional": true,
+        "nullable": true
+    },
+    {
+        "name": "max_members",
+        "type": "integer",
+        "description": "the maximum number of members for the guild",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "vanity_url_code",
+        "type": "string",
+        "description": "the vanity url code for the guild",
+        "optional": false,
+        "nullable": true
+    },
+    {
+        "name": "description",
+        "type": "string",
+        "description": "the description of a guild",
+        "optional": false,
+        "nullable": true
+    },
+    {
+        "name": "banner",
+        "type": "string",
+        "description": "banner hash",
+        "optional": false,
+        "nullable": true
+    },
+    {
+        "name": "premium_tier",
+        "type": "integer",
+        "description": "premium tier (Server Boost level)",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "premium_subscription_count",
+        "type": "integer",
+        "description": "the number of boosts this guild currently has",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "preferred_locale",
+        "type": "string",
+        "description": "the preferred locale of a Community guild; used in server discovery and notices from Discord, and sent in interactions; defaults to \"en-US\"",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "public_updates_channel_id",
+        "type": "snowflake",
+        "description": "the id of the channel where admins and moderators of Community guilds receive notices from Discord",
+        "optional": false,
+        "nullable": true
+    },
+    {
+        "name": "max_video_channel_users",
+        "type": "integer",
+        "description": "the maximum amount of users in a video channel",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "approximate_member_count",
+        "type": "integer",
+        "description": "approximate number of members in this guild, returned from the GET /guilds/<id> endpoint when with_counts is true",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "approximate_presence_count",
+        "type": "integer",
+        "description": "approximate number of non-offline members in this guild, returned from the GET /guilds/<id> endpoint when with_counts is true",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "welcome_screen",
+        "type": "welcome screen object",
+        "description": "the welcome screen of a Community guild, shown to new members, returned in an Invite's guild object",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "nsfw_level",
+        "type": "integer",
+        "description": "guild NSFW level",
+        "optional": false,
+        "nullable": false
+    },
+    {
+        "name": "stage_instances",
+        "type": "array of stage instance objects",
+        "description": "Stage instances in the guild",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "stickers",
+        "type": "array of sticker objects",
+        "description": "custom guild stickers",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "guild_scheduled_events",
+        "type": "array of guild scheduled event objects",
+        "description": "the scheduled events in the guild",
+        "optional": true,
+        "nullable": false
+    },
+    {
+        "name": "premium_progress_bar_enabled",
+        "type": "boolean",
+        "description": "whether the guild has the boost progress bar enabled",
+        "optional": false,
+        "nullable": false
+    }
+]
