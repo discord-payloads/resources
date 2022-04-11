@@ -1,56 +1,145 @@
-[
-    {
-        "name": "Ready",
-        "payload": "None",
-        "description": "The ready event is dispatched when a client has completed the initial handshake with the gateway (for new sessions). The ready event can be the largest and most complex event the gateway will send, as it contains all the state required for a client to begin interacting with the rest of the platform.",
-        "fields": [
-            {
-                "name": "v",
-                "type": "integer",
-                "description": "gateway version",
-                "optional": false,
-                "nullable": false
-            },
-            {
-                "name": "user",
-                "type": "user object",
-                "description": "information about the user including email",
-                "optional": false,
-                "nullable": false
-            },
-            {
-                "name": "guilds",
-                "type": "array of Unavailable Guild objects",
-                "description": "the guilds the user is in",
-                "optional": false,
-                "nullable": false
-            },
-            {
-                "name": "session_id",
-                "type": "string",
-                "description": "used for resuming connections",
-                "optional": false,
-                "nullable": false
-            },
-            {
-                "name": "shard",
-                "type": "array of two integers (shard_id, num_shards)",
-                "description": "the shard information associated with this session, if sent when identifying",
-                "optional": true,
-                "nullable": false
-            },
-            {
-                "name": "application",
-                "type": "partial application object",
-                "description": "contains id and flags",
-                "optional": false,
-                "nullable": false
-            }
-        ]
+{
+    "CHANNEL_CREATE": {
+        "event": "Channel Create",
+        "payload": "channel object",
+        "description": "Sent when a new guild channel is created, relevant to the current user. The inner payload is a channel object.",
+        "fields": null
     },
-    {
+    "CHANNEL_UPDATE": {
+        "event": "Channel Update",
+        "payload": "channel object",
+        "description": "Sent when a channel is updated. The inner payload is a channel object. This is not sent when the field last_message_id is altered. To keep track of the last_message_id changes, you must listen for Message Create events (or Thread Create events for GUILD_FORUM channels).",
+        "fields": null
+    },
+    "CHANNEL_DELETE": {
+        "event": "Channel Delete",
+        "payload": "channel object",
+        "description": "Sent when a channel relevant to the current user is deleted. The inner payload is a channel object.",
+        "fields": null
+    },
+    "THREAD_CREATE": {
+        "event": "Thread Create",
+        "payload": "channel object",
+        "description": "Sent when a thread is created, relevant to the current user, or when the current user is added to a thread. The inner payload is a channel object.",
+        "fields": null
+    },
+    "THREAD_UPDATE": {
+        "event": "Thread Update",
+        "payload": "channel object",
+        "description": "Sent when a thread is updated. The inner payload is a channel object. This is not sent when the field last_message_id is altered. To keep track of the last_message_id changes, you must listen for Message Create events.",
+        "fields": null
+    },
+    "THREAD_DELETE": {
+        "event": "Thread Delete",
+        "payload": "subset of the channel object",
+        "description": "Sent when a thread relevant to the current user is deleted. The inner payload is a subset of the channel object, containing just the id, guild_id, parent_id, and type fields.",
+        "fields": null
+    },
+    "THREAD_MEMBER_UPDATE": {
+        "event": "Thread Member Update",
+        "payload": "thread member object",
+        "description": "Sent when the thread member object for the current user is updated. The inner payload is a thread member object with an extra guild_id field. This event is documented for completeness, but unlikely to be used by most bots. For bots, this event largely is just a signal that you are a member of the thread. See the threads docs for more details.",
+        "fields": null
+    },
+    "GUILD_UPDATE": {
+        "event": "Guild Update",
+        "payload": "guild object",
+        "description": "Sent when a guild is updated. The inner payload is a guild object.",
+        "fields": null
+    },
+    "GUILD_DELETE": {
+        "event": "Guild Delete",
+        "payload": "unavailable guild object",
+        "description": "Sent when a guild becomes or was already unavailable due to an outage, or when the user leaves or is removed from a guild. The inner payload is an unavailable guild object. If the unavailable field is not set, the user was removed from the guild.",
+        "fields": null
+    },
+    "GUILD_MEMBER_ADD": {
+        "event": "Guild Member Add",
+        "payload": "guild member object",
+        "description": "Sent when a new user joins a guild. The inner payload is a guild member object with an extra guild_id key:",
+        "fields": null
+    },
+    "GUILD_SCHEDULED_EVENT_CREATE": {
+        "event": "Guild Scheduled Event Create",
+        "payload": "guild scheduled event object",
+        "description": "Sent when a guild scheduled event is created. The inner payload is a guild scheduled event object.",
+        "fields": null
+    },
+    "GUILD_SCHEDULED_EVENT_UPDATE": {
+        "event": "Guild Scheduled Event Update",
+        "payload": "guild scheduled event object",
+        "description": "Sent when a guild scheduled event is updated. The inner payload is a guild scheduled event object.",
+        "fields": null
+    },
+    "GUILD_SCHEDULED_EVENT_DELETE": {
+        "event": "Guild Scheduled Event Delete",
+        "payload": "guild scheduled event object",
+        "description": "Sent when a guild scheduled event is deleted. The inner payload is a guild scheduled event object.",
+        "fields": null
+    },
+    "INTEGRATION_CREATE": {
+        "event": "Integration Create",
+        "payload": "integration object",
+        "description": "Sent when an integration is created. The inner payload is a integration object with an additional guild_id key:",
+        "fields": null
+    },
+    "INTEGRATION_UPDATE": {
+        "event": "Integration Update",
+        "payload": "integration object",
+        "description": "Sent when an integration is updated. The inner payload is a integration object with an additional guild_id key:",
+        "fields": null
+    },
+    "INTERACTION_CREATE": {
+        "event": "Interaction Create",
+        "payload": "Interaction object",
+        "description": "Sent when a user in a guild uses an Application Command. Inner payload is an Interaction.",
+        "fields": null
+    },
+    "MESSAGE_CREATE": {
+        "event": "Message Create",
+        "payload": "message object",
+        "description": "Sent when a message is created. The inner payload is a message object.",
+        "fields": null
+    },
+    "MESSAGE_UPDATE": {
+        "event": "Message Update",
+        "payload": "message object",
+        "description": "Sent when a message is updated. The inner payload is a message object.",
+        "fields": null
+    },
+    "STAGE_INSTANCE_CREATE": {
+        "event": "Stage Instance Create",
+        "payload": "Stage instance object",
+        "description": "Sent when a Stage instance is created (i.e. the Stage is now \"live\"). Inner payload is a Stage instance",
+        "fields": null
+    },
+    "STAGE_INSTANCE_DELETE": {
+        "event": "Stage Instance Delete",
+        "payload": "Stage instance object",
+        "description": "Sent when a Stage instance has been deleted (i.e. the Stage has been closed). Inner payload is a Stage instance",
+        "fields": null
+    },
+    "STAGE_INSTANCE_UPDATE": {
+        "event": "Stage Instance Update",
+        "payload": "Stage instance object",
+        "description": "Sent when a Stage instance has been updated. Inner payload is a Stage instance",
+        "fields": null
+    },
+    "USER_UPDATE": {
+        "event": "User Update",
+        "payload": "user object",
+        "description": "Sent when properties about the user change. Inner payload is a user object.",
+        "fields": null
+    },
+    "VOICE_STATE_UPDATE": {
+        "event": "Voice State Update",
+        "payload": "voice state object",
+        "description": "Sent when someone joins/leaves/moves voice channels. Inner payload is a voice state object.",
+        "fields": null
+    },
+    "CHANNEL_PINS_UPDATE": {
         "name": "Channel Pins Update",
-        "payload": "None",
+        "payload": null,
         "description": "Sent when a message is pinned or unpinned in a text channel. This is not sent when a pinned message is deleted.",
         "fields": [
             {
@@ -76,9 +165,9 @@
             }
         ]
     },
-    {
+    "THREAD_LIST_SYNC": {
         "name": "Thread List Sync",
-        "payload": "None",
+        "payload": null,
         "description": "Sent when the current user gains access to a channel.",
         "fields": [
             {
@@ -111,9 +200,9 @@
             }
         ]
     },
-    {
+    "THREAD_MEMBERS_UPDATE": {
         "name": "Thread Members Update",
-        "payload": "None",
+        "payload": null,
         "description": "Sent when anyone is added to or removed from a thread.  If the current user does not have the GUILD_MEMBERS Gateway Intent, then this event will only be sent if the current user was added to or removed from the thread.",
         "fields": [
             {
@@ -138,7 +227,7 @@
                 "nullable": false
             },
             {
-                "name": "added_members*",
+                "name": "added_members",
                 "type": "array of thread member objects",
                 "description": "the users who were added to the thread",
                 "optional": true,
@@ -153,9 +242,9 @@
             }
         ]
     },
-    {
+    "GUILD_BAN_ADD": {
         "name": "Guild Ban Add",
-        "payload": "None",
+        "payload": null,
         "description": "Sent when a user is banned from a guild.",
         "fields": [
             {
@@ -174,9 +263,9 @@
             }
         ]
     },
-    {
+    "GUILD_BAN_REMOVE": {
         "name": "Guild Ban Remove",
-        "payload": "None",
+        "payload": null,
         "description": "Sent when a user is unbanned from a guild.",
         "fields": [
             {
@@ -195,9 +284,9 @@
             }
         ]
     },
-    {
+    "GUILD_EMOJIS_UPDATE": {
         "name": "Guild Emojis Update",
-        "payload": "None",
+        "payload": null,
         "description": "Sent when a guild's emojis have been updated.",
         "fields": [
             {
@@ -216,9 +305,9 @@
             }
         ]
     },
-    {
+    "GUILD_STICKERS_UPDATE": {
         "name": "Guild Stickers Update",
-        "payload": "None",
+        "payload": null,
         "description": "Sent when a guild's stickers have been updated.",
         "fields": [
             {
@@ -237,9 +326,9 @@
             }
         ]
     },
-    {
+    "GUILD_INTEGRATIONS_UPDATE": {
         "name": "Guild Integrations Update",
-        "payload": "None",
+        "payload": null,
         "description": "Sent when a guild integration is updated.",
         "fields": [
             {
@@ -251,9 +340,9 @@
             }
         ]
     },
-    {
+    "GUILD_MEMBER_REMOVE": {
         "name": "Guild Member Remove",
-        "payload": "None",
+        "payload": null,
         "description": "Sent when a user is removed from a guild (leave/kick/ban).",
         "fields": [
             {
@@ -272,9 +361,9 @@
             }
         ]
     },
-    {
+    "GUILD_MEMBER_UPDATE": {
         "name": "Guild Member Update",
-        "payload": "None",
+        "payload": null,
         "description": "Sent when a guild member is updated. This will also fire when the user object of a guild member changes.",
         "fields": [
             {
@@ -356,9 +445,9 @@
             }
         ]
     },
-    {
+    "GUILD_MEMBERS_CHUNK": {
         "name": "Guild Members Chunk",
-        "payload": "None",
+        "payload": null,
         "description": "Sent in response to Guild Request Members.\nYou can use the chunk_index and chunk_count to calculate how many chunks are left for your request.",
         "fields": [
             {
@@ -412,9 +501,9 @@
             }
         ]
     },
-    {
+    "GUILD_ROLE_CREATE": {
         "name": "Guild Role Create",
-        "payload": "None",
+        "payload": null,
         "description": "Sent when a guild role is created.",
         "fields": [
             {
@@ -433,9 +522,9 @@
             }
         ]
     },
-    {
+    "GUILD_ROLE_UPDATE": {
         "name": "Guild Role Update",
-        "payload": "None",
+        "payload": null,
         "description": "Sent when a guild role is updated.",
         "fields": [
             {
@@ -454,9 +543,9 @@
             }
         ]
     },
-    {
+    "GUILD_ROLE_DELETE": {
         "name": "Guild Role Delete",
-        "payload": "None",
+        "payload": null,
         "description": "Sent when a guild role is deleted.",
         "fields": [
             {
@@ -475,9 +564,9 @@
             }
         ]
     },
-    {
+    "GUILD_SCHEDULED_EVENT_USER_ADD": {
         "name": "Guild Scheduled Event User Add",
-        "payload": "None",
+        "payload": null,
         "description": "Sent when a user has subscribed to a guild scheduled event.",
         "fields": [
             {
@@ -503,9 +592,9 @@
             }
         ]
     },
-    {
+    "GUILD_SCHEDULED_EVENT_USER_REMOVE": {
         "name": "Guild Scheduled Event User Remove",
-        "payload": "None",
+        "payload": null,
         "description": "Sent when a user has unsubscribed from a guild scheduled event.",
         "fields": [
             {
@@ -531,9 +620,9 @@
             }
         ]
     },
-    {
+    "INTEGRATION_DELETE": {
         "name": "Integration Delete",
-        "payload": "None",
+        "payload": null,
         "description": "Sent when an integration is deleted.",
         "fields": [
             {
@@ -559,9 +648,9 @@
             }
         ]
     },
-    {
+    "INVITE_CREATE": {
         "name": "Invite Create",
-        "payload": "None",
+        "payload": null,
         "description": "Sent when a new invite to a channel is created.",
         "fields": [
             {
@@ -650,9 +739,9 @@
             }
         ]
     },
-    {
+    "INVITE_DELETE": {
         "name": "Invite Delete",
-        "payload": "None",
+        "payload": null,
         "description": "Sent when an invite is deleted.",
         "fields": [
             {
@@ -678,9 +767,9 @@
             }
         ]
     },
-    {
+    "MESSAGE_DELETE": {
         "name": "Message Delete",
-        "payload": "None",
+        "payload": null,
         "description": "Sent when a message is deleted.",
         "fields": [
             {
@@ -706,9 +795,9 @@
             }
         ]
     },
-    {
+    "MESSAGE_DELETE_BULK": {
         "name": "Message Delete Bulk",
-        "payload": "None",
+        "payload": null,
         "description": "Sent when multiple messages are deleted at once.",
         "fields": [
             {
@@ -734,9 +823,9 @@
             }
         ]
     },
-    {
+    "MESSAGE_REACTION_ADD": {
         "name": "Message Reaction Add",
-        "payload": "None",
+        "payload": null,
         "description": "Sent when a user adds a reaction to a message.",
         "fields": [
             {
@@ -783,9 +872,9 @@
             }
         ]
     },
-    {
+    "MESSAGE_REACTION_REMOVE": {
         "name": "Message Reaction Remove",
-        "payload": "None",
+        "payload": null,
         "description": "Sent when a user removes a reaction from a message.",
         "fields": [
             {
@@ -825,9 +914,9 @@
             }
         ]
     },
-    {
+    "MESSAGE_REACTION_REMOVE_ALL": {
         "name": "Message Reaction Remove All",
-        "payload": "None",
+        "payload": null,
         "description": "Sent when a user explicitly removes all reactions from a message.",
         "fields": [
             {
@@ -853,9 +942,9 @@
             }
         ]
     },
-    {
+    "MESSAGE_REACTION_REMOVE_EMOJI": {
         "name": "Message Reaction Remove Emoji",
-        "payload": "None",
+        "payload": null,
         "description": "Sent when a bot removes all instances of a given emoji from the reactions of a message.",
         "fields": [
             {
@@ -888,9 +977,9 @@
             }
         ]
     },
-    {
+    "PRESENCE_UPDATE": {
         "name": "Presence Update",
-        "payload": "None",
+        "payload": null,
         "description": "A user's presence is their current state on a guild. This event is sent when a user's presence or info, such as name or avatar, is updated.",
         "fields": [
             {
@@ -930,9 +1019,9 @@
             }
         ]
     },
-    {
+    "TYPING_START": {
         "name": "Typing Start",
-        "payload": "None",
+        "payload": null,
         "description": "Sent when a user starts typing in a channel.",
         "fields": [
             {
@@ -972,9 +1061,9 @@
             }
         ]
     },
-    {
+    "VOICE_SERVER_UPDATE": {
         "name": "Voice Server Update",
-        "payload": "None",
+        "payload": null,
         "description": "Sent when a guild's voice server is updated. This is sent when initially connecting to voice, and when the current voice instance fails over to a new server.",
         "fields": [
             {
@@ -1000,9 +1089,9 @@
             }
         ]
     },
-    {
+    "WEBHOOKS_UPDATE": {
         "name": "Webhooks Update",
-        "payload": "None",
+        "payload": null,
         "description": "Sent when a guild channel's webhook is created, updated, or deleted.",
         "fields": [
             {
@@ -1021,4 +1110,4 @@
             }
         ]
     }
-]
+}
