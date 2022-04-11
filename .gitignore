@@ -3,3 +3,5 @@ parser/
 constants.py
 *driver.exe
 venv*/
+
+__pycache__/
